@@ -1,0 +1,7 @@
+# Terminal
+alias cls="clear"
+alias update="sudo apt-get update && sudo apt-get upgrade -y"
+alias lt="tree -ad -L 2"
+
+# Git
+alias nah="git reset --hard;git clean -df;"
