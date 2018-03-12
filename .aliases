@@ -3,5 +3,16 @@ alias cls="clear"
 alias update="sudo apt-get update && sudo apt-get upgrade -y"
 alias lt="tree -ad -L 2"
 
+# Copy the content of a file to the clipboard
+function copy() {
+    if [ "$1" != "" ]
+    then
+        xclip -sel c < "$1"
+        echo "The content was copied to the clipboard."
+    else
+        echo "You must specify a file to copy its content to the clipboard."
+    fi
+}
+
 # Git
 alias nah="git reset --hard;git clean -df;"
