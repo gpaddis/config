@@ -1,8 +1,10 @@
-syntax on
+syntax on 
 
-colorscheme default
+set t_Co=256
+colorscheme atom-dark-256
 
 filetype indent plugin on
+
 
 " Indent with 4 spaces
 " https://stackoverflow.com/a/234578/7874784
@@ -10,7 +12,7 @@ set tabstop=4
 set shiftwidth=4
 set expandtab
 
-set number
+" set number
 
 "--------------Searching-------------"
 set hlsearch

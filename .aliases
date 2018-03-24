@@ -2,6 +2,7 @@
 alias cls="clear"
 alias update="sudo apt-get update && sudo apt-get upgrade -y"
 alias lt="tree -ad -L 2"
+alias sql="mysql -uroot -p"
 
 # Copy the content of a file to the clipboard
 function copy() {
