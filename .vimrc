@@ -1,7 +1,10 @@
-syntax on 
+syntax on
 
+set background=dark
 set t_Co=256
-colorscheme atom-dark-256
+
+let g:monokai_term_italic = 1
+colorscheme monokai 
 
 filetype indent plugin on
 
