@@ -4,6 +4,7 @@ alias update="sudo apt-get update && sudo apt-get upgrade -y"
 alias lt="tree -ad -L 2"
 alias sql="mysql -uroot -p"
 alias testmag="../vendor/bin/phpunit"
+alias p="vendor/bin/phpunit"
 
 # Copy the content of a file to the clipboard
 function copy() {
@@ -18,3 +19,11 @@ function copy() {
 
 # Git
 alias nah="git reset --hard;git clean -df;"
+
+# Django Dev
+alias dsource="source env/bin/activate"
+alias dmanage="python manage.py"
+
+# PHP
+alias php71="/opt/php-7.1/bin/php"
+alias php56="/opt/php-5.6.30/bin/php"
