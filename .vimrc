@@ -1,3 +1,7 @@
+set nocompatible              " be iMproved, required
+
+so ~/.vim/plugins.vim
+
 syntax on
 
 set background=dark
@@ -21,15 +25,36 @@ set expandtab
 set hlsearch
 set incsearch
 
+"--------------Split Management-------------"
+nmap <C-L> <C-W><C-L>
+nmap <C-K> <C-W><C-K>
+nmap <C-J> <C-W><C-J>
+nmap <C-H> <C-W><C-H>
 
 "--------------Mappings-------------"
 
 " Make it easy to edit the Vimrc file
 nmap ,ev :tabedit $MYVIMRC<cr>
+
 nmap ,<space> :nohlsearch<cr>
+
+" Toggle NERDTree
+nmap <C-B> :NERDTreeToggle<cr>
 
 " Execute python files
 nmap ,p :! python %<cr>
+
+"CtrlP go to symbol
+nmap <C-R> :CtrlPBufTag<cr>
+
+nmap <C-W> :q<cr>
+
+"-----------Plugin Settings-----------"
+" CtrlP
+let g:ctrlp_custom_ignore="node_modules\DS_STORE\|git"
+
+" Nerdtree
+let NERDTreeHijackNetrw = 0
 
 
 "-----------Auto-Commands-----------"
