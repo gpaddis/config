@@ -8,7 +8,7 @@ set background=dark
 set t_Co=256
 
 let g:monokai_term_italic = 1
-colorscheme monokai 
+colorscheme monokai
 
 filetype indent plugin on
 
@@ -47,6 +47,10 @@ nmap ,p :! python %<cr>
 "CtrlP go to symbol
 nmap <C-R> :CtrlPBufTag<cr>
 
+" Go to symbol in project (requires a ctags -R first)
+nmap <S-R> :tag<space> 
+
+" Close the file
 nmap <C-W> :q<cr>
 
 "-----------Plugin Settings-----------"
