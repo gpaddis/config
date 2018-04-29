@@ -17,6 +17,11 @@ function copy() {
     fi
 }
 
+# Copy the absolute path of a file
+function copypath {
+    readlink -f "$1" | xclip -sel c
+}
+
 # Git
 alias nah="git reset --hard;git clean -df;"
 
