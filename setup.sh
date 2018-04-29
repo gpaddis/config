@@ -2,13 +2,16 @@
 # Link the files to the proper places.
 # Always execute this script in the repo directory.
 
+GREEN='\033[0;32m'
+NC='\033[0m' # No Color
+
 function makeSymLink {
     local origin="$1" destination="$2"
     if [ ! -f $destination ]
     then 
         ln -s $origin $destination
-        echo "Linked $origin to $destination."
-    else echo "The file $destination already exists."
+        printf "${GREEN}Linked $origin to $destination.${NC}\n"
+    else printf "${GREEN}The file $destination already exists.${NC}\n"
     fi
 }
 
@@ -18,13 +21,13 @@ makeSymLink $PWD/.aliases $HOME/.aliases
 
 # Install Vundle if it is not present
 if [ ! -d "$HOME/.vim/bundle/Vundle.vim"  ]; then
-    echo "Vundle is not installed. Installation..."
+    printf "${GREEN}Vundle is not installed. Installation...${NC}\n"
     git clone https://github.com/VundleVim/Vundle.vim.git $HOME/.vim/bundle/Vundle.vim
 fi
 
 #Install monokai theme
 if [ ! -f "$HOME/.vim/colors/monokai.vim" ]; then
-    echo "The monokai color scheme is not installed. Installation..."
+    printf "${GREEN}The monokai color scheme is not installed. Installation...${NC}\n"
     wget https://raw.githubusercontent.com/sickill/vim-monokai/master/colors/monokai.vim -O $HOME/.vim/colors/monokai.vim
 fi
 
