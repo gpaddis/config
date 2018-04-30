@@ -34,9 +34,6 @@ nmap ,<space> :nohlsearch<cr>
 " Execute python files
 nmap ,p :! python %<cr>
 
-" Close the file
-nmap <C-W> :q<cr>
-
 "Remap keys to move around split windows
 nmap <C-L> <C-W><C-L>
 nmap <C-K> <C-W><C-K>
