@@ -5,6 +5,7 @@
 GREEN='\033[0;32m'
 NC='\033[0m' # No Color
 
+# Make a symlink to origin in destination if this does not exist
 function makeSymLink {
     local origin="$1" destination="$2"
     if [ ! -f $destination ]
@@ -15,9 +16,19 @@ function makeSymLink {
     fi
 }
 
+# Check if a directory exists or create the full path
+function checkOrMakeDir {
+    local directory="$1"
+    if [ ! -d $directory ]; then
+        mkdir -p $directory
+    fi
+}
+
 makeSymLink $PWD/.vimrc $HOME/.vimrc
 makeSymLink $PWD/plugins.vim $HOME/.vim/plugins.vim
 makeSymLink $PWD/.aliases $HOME/.aliases
+
+checkOrMakeDir $HOME/.vim/colors
 
 # Install Vundle if it is not present
 if [ ! -d "$HOME/.vim/bundle/Vundle.vim"  ]; then
