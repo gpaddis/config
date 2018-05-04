@@ -66,8 +66,12 @@ let g:ctrlp_custom_ignore="node_modules\DS_STORE\|git"                 "Ignore t
 let g:ctrlp_match_window = 'top,order:ttb,min:1,max:30,results:25'
 "Go to symbol in file
 nmap <C-R> :CtrlPBufTag<cr>
+
 " Go to symbol in project (requires a ctags -R first)
-nmap <S-R> :tag<space> 
+nmap <C-E> :tag<space> 
+
+" Ignore these files and folders when calling CtrlP
+set wildignore+=*/tmp/*,*.so,*.swp,*.zip,*/.git/*
 
 "\
 "\ Nerdtree
