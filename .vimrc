@@ -22,7 +22,7 @@ hi foldcolumn ctermbg=bg
 "set number
 
 " With a map leader it's possible to do extra key combinations
-" " like <leader>w saves the current file
+" like <leader>w saves the current file
 let mapleader = ","
 
 "--------------Searching-------------"
@@ -51,7 +51,7 @@ nmap <leader>p :! python %<cr>
 nmap vs :vsplit<cr>
 nmap sp :split<cr>
 
-"Remap keys to move around split windows
+" Remap keys to move around split windows
 nmap <C-L> <C-W><C-L>
 nmap <C-K> <C-W><C-K>
 nmap <C-J> <C-W><C-J>
@@ -64,7 +64,8 @@ nmap <C-H> <C-W><C-H>
 "\
 let g:ctrlp_custom_ignore="node_modules\DS_STORE\|git"                 "Ignore these dirs when indexing the files.
 let g:ctrlp_match_window = 'top,order:ttb,min:1,max:30,results:25'
-"Go to symbol in file
+
+" Go to symbol in file
 nmap <C-R> :CtrlPBufTag<cr>
 
 " Go to symbol in project (requires a ctags -R first)
