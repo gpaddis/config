@@ -35,6 +35,10 @@ set incsearch
 " Make it easy to edit the Vimrc file
 nmap <leader>ev :tabedit $MYVIMRC<cr>
 
+" Copy the visual selection to the system clipboard. Requires installation of vim-gtk on ubuntu.
+" This is not working!
+"nmap <leader>m "+y
+
 " Fast save
 nmap <leader>w :w<cr>
 
@@ -64,6 +68,9 @@ nmap <C-H> <C-W><C-H>
 "\
 let g:ctrlp_custom_ignore="node_modules\DS_STORE\|git"                 "Ignore these dirs when indexing the files.
 let g:ctrlp_match_window = 'top,order:ttb,min:1,max:30,results:25'
+let g:ctrlp_switch_buffer=0
+let g:ctrlp_working_path_mode=0
+"let g:ctrlp_user_command='ag %s -l --nocolor -g ""'                    "You must install silversearcher-ag for this to work.
 
 " Go to symbol in file
 nmap <C-R> :CtrlPBufTag<cr>
