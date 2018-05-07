@@ -8,7 +8,7 @@ set background=dark
 set t_Co=256
 
 let g:monokai_term_italic = 1
-colorscheme material-monokai 
+colorscheme badwolf
 filetype indent plugin on
 
 

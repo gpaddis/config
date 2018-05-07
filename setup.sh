@@ -24,6 +24,7 @@ fi
 checkOrDownload "https://raw.githubusercontent.com/sickill/vim-monokai/master/colors/monokai.vim" "$VIMDIR/colors/monokai.vim"
 checkOrDownload "https://raw.githubusercontent.com/skielbasa/vim-material-monokai/master/colors/material-monokai.vim" "$VIMDIR/colors/material-monokai.vim"
 checkOrDownload "https://raw.githubusercontent.com/gosukiwi/vim-atom-dark/master/colors/atom-dark-256.vim" "$VIMDIR/colors/atom-dark-256.vim"
+checkOrDownload "https://raw.githubusercontent.com/sjl/badwolf/master/colors/badwolf.vim" "$VIMDIR/colors/badwolf.vim"
 
 # Install all Vundle plugins
 vim +PluginInstall +qall
