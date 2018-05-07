@@ -1,13 +1,31 @@
+### ALIASES ################################################
+
 # Terminal
 alias cls="clear"
 alias update="sudo apt-get update && sudo apt-get upgrade -y"
 alias lt="tree -ad -L 2"
 alias sql="mysql -uroot -p"
-alias testmag="../vendor/bin/phpunit"
 alias p="vendor/bin/phpunit"
 
+# Git
+alias nah="git reset --hard;git clean -df;"
+
+# Django Dev
+alias dsource="source env/bin/activate"
+alias dmanage="python manage.py"
+
+# Magento
+alias testmag="../vendor/bin/phpunit"
+
+# PHP (OsX-specific)
+alias php71="/opt/php-7.1/bin/php"
+alias php56="/opt/php-5.6.30/bin/php"
+
+
+### FUNCTIONS ##############################################
+
 # Copy the content of a file to the clipboard
-function copy() {
+function copy {
     if [ "$1" != "" ]
     then
         xclip -sel c < "$1"
@@ -22,13 +40,3 @@ function copypath {
     readlink -f "$1" | xclip -sel c
 }
 
-# Git
-alias nah="git reset --hard;git clean -df;"
-
-# Django Dev
-alias dsource="source env/bin/activate"
-alias dmanage="python manage.py"
-
-# PHP
-alias php71="/opt/php-7.1/bin/php"
-alias php56="/opt/php-5.6.30/bin/php"
