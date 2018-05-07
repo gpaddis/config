@@ -17,10 +17,11 @@ alias dmanage="python manage.py"
 # Magento
 alias testmag="../vendor/bin/phpunit"
 
-# PHP (OsX-specific)
+# PHP 
+# (OsX-specific)
 alias php71="/opt/php-7.1/bin/php"
 alias php56="/opt/php-5.6.30/bin/php"
-
+alias createtags='ctags -R --PHP-kinds=cfi --regex-php="/^[ \t]*trait[ \t]+([a-z0_9_]+)/\1/t,traits/i"'
 
 ### FUNCTIONS ##############################################
 

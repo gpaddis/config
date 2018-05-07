@@ -10,7 +10,11 @@ Plugin 'tpope/vim-vinegar'
 Plugin 'scrooloose/nerdtree'
 Plugin 'ctrlpvim/ctrlp.vim'
 Plugin 'itchyny/lightline.vim'
-Plugin 'Valloric/YouCompleteMe'
+Plugin 'StanAngeloff/php.vim'
+Plugin 'arnaud-lb/vim-php-namespace'
+
+" Disabled for now
+"Plugin 'Valloric/YouCompleteMe'
 
 " NOTES
 " YouCompleteMe: read the instructions
@@ -19,6 +23,4 @@ Plugin 'Valloric/YouCompleteMe'
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
 filetype plugin indent on    " required
-
-
 

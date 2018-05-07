@@ -1,6 +1,6 @@
 # If the destination file does not exist download from origin to destination
 function checkOrDownload {
-    local origin="$1" destination="$2" downloadCommand="wget"
+    local origin="$1" destination="$2"
 
     if [ ! -f $destination ]; then
         printf "${GREEN}Could not find $destination. Installation...${NC}\n"
@@ -15,6 +15,7 @@ function checkOrDownload {
 # Check if a directory exists or create the full path
 function checkOrMakeDir {
     local directory="$1"
+
     if [ ! -d $directory ]; then
         mkdir -p $directory
     fi
@@ -23,6 +24,7 @@ function checkOrMakeDir {
 # Make a symlink to origin in destination if this does not exist
 function makeSymLink {
     local origin="$1" destination="$2"
+
     if [ ! -f $destination ]
     then
         ln -s $origin $destination
