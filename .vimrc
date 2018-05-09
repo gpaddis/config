@@ -36,6 +36,9 @@ hi foldcolumn ctermbg=bg
 set hlsearch
 set incsearch
 
+" Remove highlightning
+nmap <leader><space> :nohlsearch<cr>
+
 " }}}
 " General Mappings {{{
 
@@ -51,14 +54,12 @@ nmap <leader>ez :tabedit ~/.zshrc<cr>
 " Copy the visual selection to the system clipboard. Requires installation of vim-gtk on ubuntu.
 vnoremap <C-c> "+y
 
-" Fast save
-nmap <leader>w :w<cr>
+" Fast save in normal and insert mode
+noremap <leader>w :w<cr>
+inoremap <leader>w <esc>:w<cr>
 
 " Fast quit 
 nmap <leader>q :q<cr>
-
-" Remove highlightning
-nmap <leader><space> :nohlsearch<cr>
 
 " Space unfold
 nmap <space> za
