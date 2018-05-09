@@ -33,8 +33,11 @@ set incsearch
 
 "--------------General Mappings-------------"
 
-" Make it easy to edit the Vimrc file
+" Quickly edit the Vimrc file
 nmap <leader>ev :tabedit $MYVIMRC<cr>
+
+" Quickly edit the Zshrc file
+nmap <leader>ez :tabedit ~/.zshrc<cr>
 
 " Copy the visual selection to the system clipboard. Requires installation of vim-gtk on ubuntu.
 " This is not working!
