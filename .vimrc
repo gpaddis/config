@@ -15,6 +15,7 @@ filetype indent plugin on
 set tabstop=4                       "Indent with 4 spaces https://stackoverflow.com/a/234578/7874784
 set shiftwidth=4
 set expandtab
+set wildmenu
 
 set foldcolumn=2                    "Set foldcolumn to make some space.
 hi foldcolumn ctermbg=bg
