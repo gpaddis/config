@@ -1,10 +1,11 @@
 set nocompatible                    "be iMproved, required
-
 so ~/.vim/plugins.vim               "Source the plugins file
 
 " Documentation {{{
+
 " Reference Tutorials
 " * A good vimrc: https://dougblack.io/words/a-good-vimrc.html
+
 " }}}
 " Colors {{{
 
@@ -19,6 +20,7 @@ filetype indent plugin on
 
 " }}}
 " Spaces & Tabs {{{
+
 set tabstop=4                       "Indent with 4 spaces https://stackoverflow.com/a/234578/7874784
 set shiftwidth=4
 set expandtab
@@ -27,12 +29,16 @@ set wildmenu
 set foldcolumn=2                    "Set foldcolumn to make some space.
 hi foldcolumn ctermbg=bg
 
-" This is to allow 
+" This refers to the last line in the .vimrc file, settings specific to this
+" file only.
 set modelines=1
+
 " }}}
 " Searching {{{
+
 set hlsearch
 set incsearch
+
 " }}}
 " General Mappings {{{
 
@@ -59,12 +65,19 @@ nmap <leader>q :q<cr>
 
 " Remove highlightning
 nmap <leader><space> :nohlsearch<cr>
+
+" Space unfold
+vnoremap <space> za
+
 " }}}
-" Language-Specific Mappings {{{
+" Python {{{
+
 " Execute python files
 nmap <leader>p :! python %<cr>
+
 " }}}
 " Split Management {{{
+
 " Open splits
 nmap vs :vsplit<cr>
 nmap sp :split<cr>
@@ -74,8 +87,10 @@ nmap <C-L> <C-W><C-L>
 nmap <C-K> <C-W><C-K>
 nmap <C-J> <C-W><C-J>
 nmap <C-H> <C-W><C-H>
+
 " }}}
 " CtrlP {{{
+
 let g:ctrlp_custom_ignore="node_modules\DS_STORE\|git"                 "Ignore these dirs when indexing the files.
 let g:ctrlp_match_window = 'top,order:ttb,min:1,max:30,results:25'
 let g:ctrlp_switch_buffer=0
@@ -90,21 +105,26 @@ nmap <C-E> :tag<space>
 
 " Ignore these files and folders when calling CtrlP
 set wildignore+=*/tmp/*,*.so,*.swp,*.zip,*/.git/*
+
 " }}}
 " NERDTree {{{
+
 let NERDTreeHijackNetrw = 0         "Avoid conflicts with vinegar.
 nmap <C-B> :NERDTreeToggle<cr>
+
 " }}}
 " Backups {{{
-"-----------Set Backup Path-----------"
+
 " Source: https://dougblack.io/words/a-good-vimrc.html
 set backup
 set backupdir=~/.vim-tmp,~/.tmp,~/tmp,/var/tmp,/tmp
 set backupskip=/tmp/*,/private/tmp/*
 set directory=~/.vim-tmp,~/.tmp,~/tmp,/var/tmp,/tmp
 set writebackup
+
 " }}}
 " AutoGroups {{{
+
 "Automatically source the Vimrc file on save, clear the augroup each time.
 augroup autosourcing
     autocmd!
@@ -127,6 +147,7 @@ function! IPhpExpandClass()
 endfunction
 autocmd FileType php inoremap <Leader>e <Esc>:call IPhpExpandClass()<CR>
 autocmd FileType php noremap <Leader>e :call PhpExpandClass()<CR>
+
 " }}}
 
 " This is to structure the .vimrc file in sections.
