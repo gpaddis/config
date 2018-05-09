@@ -13,6 +13,7 @@ Plugin 'itchyny/lightline.vim'
 Plugin 'StanAngeloff/php.vim'
 Plugin 'arnaud-lb/vim-php-namespace'
 Plugin 'ervandew/supertab'
+Plugin 'stephpy/vim-php-cs-fixer'
 
 " Disabled for now
 "Plugin 'Valloric/YouCompleteMe'

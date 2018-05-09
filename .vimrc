@@ -3,9 +3,10 @@ so ~/.vim/plugins.vim               "Source the plugins file
 
 " Documentation {{{
 
-" Reference Tutorials
+" Reference Tutorials & guides
 " * A good vimrc: https://dougblack.io/words/a-good-vimrc.html. Here are the
 "   instructions to structure the .vimrc file in sections.
+" * Vim as a PHP Ide: http://web-techno.net/vim-php-ide/
 
 " }}}
 " Colors {{{
@@ -63,6 +64,19 @@ nmap <leader>q :q<cr>
 
 " Space unfold
 nmap <space> za
+
+" }}}
+" PHP {{{
+
+" php-cs-fixer
+let g:php_cs_fixer_rules = "@PSR2"          " options: --rules (default:@PSR2)
+let g:php_cs_fixer_php_path = "php"               " Path to PHP
+let g:php_cs_fixer_dry_run = 0                    " Call command with dry-run option
+let g:php_cs_fixer_verbose = 0                    " Return the output of command if 1, else an inline information.
+
+" Map the fixer commands
+nnoremap <silent><leader>pcd :call PhpCsFixerFixDirectory()<CR>
+nnoremap <silent><leader>pcf :call PhpCsFixerFixFile()<CR>
 
 " }}}
 " Python {{{
