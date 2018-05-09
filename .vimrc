@@ -49,8 +49,6 @@ nmap <leader>ev :tabedit $MYVIMRC<cr>
 nmap <leader>ez :tabedit ~/.zshrc<cr>
 
 " Copy the visual selection to the system clipboard. Requires installation of vim-gtk on ubuntu.
-" This is not working!
-" Note: this should be mapped to visual mode!
 vnoremap <C-c> "+y
 
 " Fast save
