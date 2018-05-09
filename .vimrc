@@ -4,7 +4,8 @@ so ~/.vim/plugins.vim               "Source the plugins file
 " Documentation {{{
 
 " Reference Tutorials
-" * A good vimrc: https://dougblack.io/words/a-good-vimrc.html
+" * A good vimrc: https://dougblack.io/words/a-good-vimrc.html. Here are the
+"   instructions to structure the .vimrc file in sections.
 
 " }}}
 " Colors {{{
@@ -29,10 +30,6 @@ set wildmenu
 set foldcolumn=2                    "Set foldcolumn to make some space.
 hi foldcolumn ctermbg=bg
 
-" This refers to the last line in the .vimrc file, settings specific to this
-" file only.
-set modelines=1
-
 " }}}
 " Searching {{{
 
@@ -42,8 +39,7 @@ set incsearch
 " }}}
 " General Mappings {{{
 
-" With a map leader it's possible to do extra key combinations
-" like <leader>w saves the current file
+" With a map leader it's possible to do extra key combinations.
 let mapleader = ","
 
 " Quickly edit the Vimrc file
@@ -67,7 +63,7 @@ nmap <leader>q :q<cr>
 nmap <leader><space> :nohlsearch<cr>
 
 " Space unfold
-vnoremap <space> za
+nmap <space> za
 
 " }}}
 " Python {{{
@@ -150,5 +146,6 @@ autocmd FileType php noremap <Leader>e :call PhpExpandClass()<CR>
 
 " }}}
 
-" This is to structure the .vimrc file in sections.
+" This section contains the necessary settings to structure the .vimrc in sections.
+set modelines=1
 " vim:foldmethod=marker:foldlevel=0
