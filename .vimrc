@@ -55,6 +55,9 @@ nmap <leader>ez :tabedit ~/.zshrc<cr>
 " Copy the visual selection to the system clipboard. Requires installation of vim-gtk on ubuntu.
 vnoremap <C-c> "+y
 
+" Exit insert mode
+inoremap jj <esc>
+
 " Fast save in normal and insert mode
 noremap <leader>w :w<cr>
 inoremap <leader>w <esc>:w<cr>
