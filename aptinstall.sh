@@ -11,7 +11,7 @@ sudo apt update && sudo apt upgrade -y
 
 sudo apt remove vim-tiny -y
 
-sudo apt install vim vim-gtk xclip dia curl zim code zsh -y
+sudo apt install vim vim-gtk xclip dia curl zim code zsh keepassx -y
 
 # Make zsh the default shell, install oh-my-zsh
 if [ ! $SHELL = '/usr/bin/zsh' ]; then
