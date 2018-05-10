@@ -38,7 +38,7 @@ set hlsearch
 set incsearch
 
 " Remove highlightning
-noremap <leader><space> :nohlsearch<cr>
+noremap <leader>h :nohlsearch<cr>
 
 " }}}
 " General Mappings {{{
