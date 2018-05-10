@@ -14,6 +14,7 @@ Plugin 'StanAngeloff/php.vim'
 Plugin 'arnaud-lb/vim-php-namespace'
 Plugin 'ervandew/supertab'
 Plugin 'stephpy/vim-php-cs-fixer'
+Plugin 'msanders/snipmate.vim'
 
 " Disabled for now
 "Plugin 'Valloric/YouCompleteMe'

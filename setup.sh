@@ -12,6 +12,10 @@ makeSymLink $PWD/.vimrc $HOME/.vimrc
 makeSymLink $PWD/plugins.vim $VIMDIR/plugins.vim
 makeSymLink $PWD/.aliases $HOME/.aliases
 
+# Link the snippets
+checkOrMakeDir $VIMDIR/snippets
+makeSymLink $PWD/snippets/php.snippets $VIMDIR/snippets/php.snippets
+
 checkOrMakeDir $VIMDIR/colors
 
 # Install Vundle if it is not present

@@ -52,6 +52,9 @@ nmap <leader>ev :tabedit $MYVIMRC<cr>
 " Quickly edit the Zshrc file
 nmap <leader>ez :tabedit ~/.zshrc<cr>
 
+" Edit the snippet files
+nmap <leader>es :e ~/.vim/snippets/
+
 " Copy the visual selection to the system clipboard. Requires installation of vim-gtk on ubuntu.
 vnoremap <C-c> "+y
 
