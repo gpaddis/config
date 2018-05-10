@@ -12,7 +12,7 @@ Plugin 'ctrlpvim/ctrlp.vim'
 Plugin 'itchyny/lightline.vim'
 Plugin 'StanAngeloff/php.vim'
 Plugin 'arnaud-lb/vim-php-namespace'
-Plugin 'ervandew/supertab'
+"Plugin 'ervandew/supertab'
 Plugin 'stephpy/vim-php-cs-fixer'
 Plugin 'msanders/snipmate.vim'
 
