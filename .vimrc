@@ -49,6 +49,11 @@ set smartcase  " Don't ignore case, when I search for uppercase patterns.
 " Remove highlightning
 nmap <leader>hh :nohlsearch<cr>
 
+" Turn off highlighting automatically when I don't move the cursor for a
+" while, then on again when I move it.
+autocmd cursorhold * set nohlsearch
+autocmd cursormoved * set hlsearch
+
 " }}}
 " General Mappings {{{
 
@@ -71,7 +76,7 @@ vnoremap <C-c> "+y
 inoremap jj <esc>
 
 " Fast save in normal and insert mode
-noremap <leader>w :w<cr>
+noremap <leader>w :w!<cr>
 inoremap <leader>w <esc>:bd<cr>
 
 " Fast quit 
