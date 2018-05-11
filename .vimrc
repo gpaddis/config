@@ -13,7 +13,7 @@ so ~/.vim/plugins.vim               "Source the plugins file
 "   * https://github.com/rosetree/tildeslash/blob/master/.vimrc
 
 " }}}
-" Colors {{{
+" Visual Settings {{{
 
 syntax on
 
@@ -23,6 +23,9 @@ set t_Co=256
 let g:monokai_term_italic = 1
 colorscheme badwolf
 filetype indent plugin on
+
+set laststatus=2    " Always show the status line.
+
 
 " }}}
 " Spaces & Tabs {{{
