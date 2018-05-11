@@ -3,10 +3,14 @@ so ~/.vim/plugins.vim               "Source the plugins file
 
 " Documentation {{{
 
-" Reference Tutorials & guides
-" * A good vimrc: https://dougblack.io/words/a-good-vimrc.html. Here are the
-"   instructions to structure the .vimrc file in sections.
-" * Vim as a PHP Ide: http://web-techno.net/vim-php-ide/
+" Reference:
+"   * A good vimrc: https://dougblack.io/words/a-good-vimrc.html. Here are the
+"     instructions to structure the .vimrc file in sections.
+"   * Vim as a PHP Ide: http://web-techno.net/vim-php-ide/
+" 
+" Inspiration:
+"   * https://gist.github.com/JeffreyWay/6753834
+"   * https://github.com/rosetree/tildeslash/blob/master/.vimrc
 
 " }}}
 " Colors {{{
@@ -36,9 +40,11 @@ hi foldcolumn ctermbg=bg
 
 set hlsearch
 set incsearch
+set ignorecase " Ignore case, when I search for lowercase patterns.
+set smartcase  " Don't ignore case, when I search for uppercase patterns.
 
 " Remove highlightning
-noremap <leader>h :nohlsearch<cr>
+nmap <leader>hh :nohlsearch<cr>
 
 " }}}
 " General Mappings {{{
@@ -63,7 +69,7 @@ inoremap jj <esc>
 
 " Fast save in normal and insert mode
 noremap <leader>w :w<cr>
-inoremap <leader>w <esc>:w<cr>
+inoremap <leader>w <esc>:bd<cr>
 
 " Fast quit 
 nmap <leader>q :q<cr>
@@ -106,7 +112,9 @@ nmap <C-H> <C-W><C-H>
 " }}}
 " CtrlP {{{
 
-let g:ctrlp_custom_ignore="node_modules\DS_STORE\|git"                 "Ignore these dirs when indexing the files.
+let g:ctrlp_custom_ignore = {
+    \ 'dir':  '\.git$\|\.hg$\|\.svn$\|bower_components$\|dist$\|node_modules$\|project_files$\|test$',
+    \ 'file': '\.exe$\|\.so$\|\.dll$\|\.pyc$' }
 let g:ctrlp_match_window = 'top,order:ttb,min:1,max:30,results:25'
 let g:ctrlp_switch_buffer=0
 let g:ctrlp_working_path_mode=0
