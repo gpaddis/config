@@ -11,11 +11,20 @@ sudo apt update && sudo apt upgrade -y
 
 sudo apt remove vim-tiny -y
 
-sudo apt install vim vim-gtk xclip dia curl zim code zsh keepassx terminator -y
+sudo apt install vim vim-gtk xclip dia curl zim code zsh keepassx terminator fonts-powerline -y
 
 # Make zsh the default shell, install oh-my-zsh
 if [ ! $SHELL = '/usr/bin/zsh' ]; then
+    $ZSHRC = $HOME/.zshrc
+
     chsh -s $(which zsh)
     sh -c "$(wget https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh -O -)"
+
+    # Set the default user in the .zshrc
+    echo "# Hide the default user name from the prompt" >> $ZSHRC
+    echo DEFAULT_USER=\"$USER\" >> $ZSHRC
+
+    # Use agnoster theme instead of default (robbyrussell)
+    sed -i -e 's/robbyrussell/agnoster/g' $ZSHRC 
 fi
 
