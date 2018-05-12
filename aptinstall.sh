@@ -26,5 +26,8 @@ if [ ! $SHELL = '/usr/bin/zsh' ]; then
 
     # Use agnoster theme instead of default (robbyrussell)
     sed -i -e 's/robbyrussell/agnoster/g' $ZSHRC 
+
+    # Import the custom aliases
+    echo "source ~/.aliases" >> $ZSHRC
 fi
 

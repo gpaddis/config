@@ -32,3 +32,4 @@ checkOrDownload "https://raw.githubusercontent.com/sjl/badwolf/master/colors/bad
 
 # Install all Vundle plugins
 vim +PluginInstall +qall
+vim +PluginInstall +qall # Sometimes once is not enough.
