@@ -15,10 +15,7 @@ function checkOrDownload {
 # Check if a directory exists or create the full path
 function checkOrMakeDir {
     local directory="$1"
-
-    if [ ! -d $directory ]; then
-        mkdir -p $directory
-    fi
+    [ -d $directory ] || mkdir -p $directory
 }
 
 # Make a symlink to origin in destination if this does not exist
