@@ -13,8 +13,7 @@ makeSymLink $PWD/plugins.vim $VIMDIR/plugins.vim
 makeSymLink $PWD/.aliases $HOME/.aliases
 
 # Link the snippets
-checkOrMakeDir $VIMDIR/snippets
-makeSymLink $PWD/snippets/php.snippets $VIMDIR/snippets/php.snippets
+[ -d $VIMDIR/UltiSnips ] || makeSymLink $PWD/UltiSnips $VIMDIR/UltiSnips
 
 checkOrMakeDir $VIMDIR/colors
 
@@ -30,6 +29,6 @@ checkOrDownload "https://raw.githubusercontent.com/skielbasa/vim-material-monoka
 checkOrDownload "https://raw.githubusercontent.com/gosukiwi/vim-atom-dark/master/colors/atom-dark-256.vim" "$VIMDIR/colors/atom-dark-256.vim"
 checkOrDownload "https://raw.githubusercontent.com/sjl/badwolf/master/colors/badwolf.vim" "$VIMDIR/colors/badwolf.vim"
 
-# Install all Vundle plugins
-vim +PluginInstall +qall
-vim +PluginInstall +qall # Sometimes once is not enough.
+# Clean all old Vundle plugins and install the new ones.
+vim +PluginClean +qall
+vim +PluginInstall +qall 

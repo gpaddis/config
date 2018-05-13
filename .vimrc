@@ -47,7 +47,7 @@ set ignorecase " Ignore case, when I search for lowercase patterns.
 set smartcase  " Don't ignore case, when I search for uppercase patterns.
 
 " Remove highlightning
-nmap <leader>hh :nohlsearch<cr>
+nmap <leader>u :nohlsearch<cr>
 
 " Turn off highlighting automatically when I don't move the cursor for a
 " while, then on again when I move it.
@@ -65,9 +65,6 @@ nmap <leader>ev :tabedit $MYVIMRC<cr>
 
 " Quickly edit the Zshrc file
 nmap <leader>ez :tabedit ~/.zshrc<cr>
-
-" Edit the snippet files
-nmap <leader>es :e ~/.vim/snippets/
 
 " Copy the visual selection to the system clipboard. Requires installation of vim-gtk on ubuntu.
 vnoremap <C-c> "+y
@@ -143,6 +140,18 @@ set wildignore+=*/tmp/*,*.so,*.swp,*.zip,*/.git/*
 let NERDTreeHijackNetrw = 0         "Avoid conflicts with vinegar.
 nmap <C-B> :NERDTreeToggle<cr>
 
+" }}}a
+" UltiSnips {{{
+
+" If you want :UltiSnipsEdit to split your window.
+let g:UltiSnipsEditSplit="vertical"
+" Trigger configuration. Do not use <tab> if you use https://github.com/Valloric/YouCompleteMe.
+let g:UltiSnipsExpandTrigger="<tab>"
+let g:UltiSnipsJumpForwardTrigger="<tab>"
+let g:UltiSnipsJumpBackwardTrigger="<S-tab>"
+
+" Set the snippets directory.
+let g:UltiSnipsSnippetsDir = "~/.vim/UltiSnips"
 " }}}
 " Backups {{{
 

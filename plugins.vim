@@ -14,7 +14,9 @@ Plugin 'StanAngeloff/php.vim'
 Plugin 'arnaud-lb/vim-php-namespace'
 "Plugin 'ervandew/supertab'
 Plugin 'stephpy/vim-php-cs-fixer'
-Plugin 'msanders/snipmate.vim'
+"Plugin 'msanders/snipmate.vim'
+Plugin 'SirVer/ultisnips'
+" Plugin 'honza/vim-snippets' " The snippets for ultisnips
 
 " Disabled for now
 "Plugin 'Valloric/YouCompleteMe'
