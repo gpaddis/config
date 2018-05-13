@@ -1,6 +1,10 @@
-snippet met "New public function"
-function $1()
+snippet met "New PHP Class Method"
+${1:public} function ${2:name}(\$${3:argument})
 {
-	$2
+	${4:// Code...}
 }
+endsnippet
+
+snippet this "Extend $this"
+\$this->$1
 endsnippet
