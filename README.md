@@ -1,3 +1,3 @@
-These are my configuration files. 
+These are my configuration files and some scripts to automatize the configuration of a new system.
 
-Clone the repo in a folder in the home directory, then run the script `./setup.sh`. It will create symlinks to the files and install the necessary plugins.
+Clone the repo in a folder in the home directory, then run the shell scripts.
