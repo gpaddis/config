@@ -47,7 +47,7 @@ set ignorecase " Ignore case, when I search for lowercase patterns.
 set smartcase  " Don't ignore case, when I search for uppercase patterns.
 
 " Remove highlightning
-nmap <leader>u :nohlsearch<cr>
+nmap <leader><space> :nohlsearch<cr>
 
 " Turn off highlighting automatically when I don't move the cursor for a
 " while, then on again when I move it.
@@ -80,7 +80,7 @@ inoremap <leader>w <esc>:bd<cr>
 nmap <leader>q :q<cr>
 
 " Space unfold
-nmap <space> za
+nmap + za
 
 " }}}
 " PHP {{{
