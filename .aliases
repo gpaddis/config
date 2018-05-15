@@ -17,6 +17,7 @@ alias dmanage="python manage.py"
 
 # Magento
 alias testmag="../vendor/bin/phpunit"
+alias Log="cd var/log"
 
 # PHP 
 # (OsX-specific)
