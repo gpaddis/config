@@ -1,0 +1,16 @@
+snippet composer "Basic composer.json structure for a new Magento module."
+{
+    "name": "${1:namespace}/${2:module-name}",
+    "description": "$3",
+    "type": "magento-module",
+    "authors": [
+        {
+            "name": "$4",
+            "email": "$5"
+        }
+    ],
+    "require": {
+        "magento-hackathon/magento-composer-installer":"*"
+    }
+}
+endsnippet 
