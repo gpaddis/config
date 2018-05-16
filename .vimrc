@@ -79,7 +79,7 @@ inoremap <leader>w <esc>:bd<cr>
 " Fast quit 
 nmap <leader>q :q<cr>
 
-" Space unfold
+" Unfold with +
 nmap + za
 
 " }}}

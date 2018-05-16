@@ -2,8 +2,6 @@
 # Link the files to the proper places.
 # Always execute this script in the repo directory.
 
-GREEN='\033[0;32m'
-NC='\033[0m' # No Color
 VIMDIR="$HOME/.vim"
 
 source bash_functions.sh
@@ -19,7 +17,7 @@ checkOrMakeDir $VIMDIR/colors
 
 # Install Vundle if it is not present
 if [ ! -d "$VIMDIR/bundle/Vundle.vim"  ]; then
-    printf "${GREEN}Vundle is not installed. Installation...${NC}\n"
+    printGreen "Vundle is not installed. Installation..."
     git clone https://github.com/VundleVim/Vundle.vim.git $VIMDIR/bundle/Vundle.vim
 fi
 
@@ -31,4 +29,7 @@ checkOrDownload "https://raw.githubusercontent.com/sjl/badwolf/master/colors/bad
 
 # Clean all old Vundle plugins and install the new ones.
 vim +PluginClean +qall
-vim +PluginInstall +qall 
+vim +PluginInstall +qall
+
+# Reminders
+[ -d $VIMDIR/bundle/YouCompleteMe ] && printGreen "YouCompleteMe is installed: run install.py in the plugin directory if you haven't already."

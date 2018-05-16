@@ -17,9 +17,7 @@ Plugin 'stephpy/vim-php-cs-fixer'
 "Plugin 'msanders/snipmate.vim'
 Plugin 'SirVer/ultisnips'
 Plugin 'honza/vim-snippets' " The snippets for ultisnips
-
-" Disabled for now
-"Plugin 'Valloric/YouCompleteMe'
+Plugin 'Valloric/YouCompleteMe'
 
 " NOTES
 " YouCompleteMe: read the instructions

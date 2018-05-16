@@ -1,9 +1,18 @@
+# Print a message in green
+function printGreen {
+    local green='\033[0;32m'
+    local nocolor='\033[0m'
+    local message="$1"
+
+    printf "${green}${message}${nocolor}\n"
+}
+
 # If the destination file does not exist download from origin to destination
 function checkOrDownload {
     local origin="$1" destination="$2"
 
     if [ ! -f $destination ]; then
-        printf "${GREEN}Could not find $destination. Installation...${NC}\n"
+        printGreen "Could not find $destination. Installation..."
         # Use wget or curl
         if [ $(command -v wget) ]
         then wget $origin -O $destination
@@ -25,7 +34,8 @@ function makeSymLink {
     if [ ! -f $destination ]
     then
         ln -s $origin $destination
-        printf "${GREEN}Linked $origin to $destination.${NC}\n"
-    else printf "${GREEN}The file $destination already exists.${NC}\n"
+        printGreen "Linked $origin to $destination."
+    else printGreen "The file $destination already exists."
     fi
 }
+
