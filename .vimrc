@@ -39,7 +39,7 @@ set foldcolumn=2                    "Set foldcolumn to make some space.
 hi foldcolumn ctermbg=bg
 
 " }}}
-" Searching {{{
+" Searching {{{ 
 
 set hlsearch
 set incsearch
@@ -47,7 +47,7 @@ set ignorecase " Ignore case, when I search for lowercase patterns.
 set smartcase  " Don't ignore case, when I search for uppercase patterns.
 
 " Remove highlightning
-nmap <leader><space> :nohlsearch<cr>
+noremap <space> :nohlsearch<cr>
 
 " Turn off highlighting automatically when I don't move the cursor for a
 " while, then on again when I move it.
