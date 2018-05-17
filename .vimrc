@@ -143,6 +143,9 @@ nmap <C-B> :NERDTreeToggle<cr>
 " }}}a
 " UltiSnips {{{
 
+" Edit the snippets
+nmap <leader>es :UltiSnipsEdit<cr>
+
 " If you want :UltiSnipsEdit to split your window.
 let g:UltiSnipsEditSplit="vertical"
 " Trigger configuration. Do not use <tab> if you use https://github.com/Valloric/YouCompleteMe.
@@ -152,6 +155,7 @@ let g:UltiSnipsJumpBackwardTrigger="<S-tab>"
 
 " Set the snippets directory.
 let g:UltiSnipsSnippetsDir = "~/.vim/UltiSnips"
+
 " }}}
 " Backups {{{
 
