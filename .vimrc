@@ -161,6 +161,12 @@ let g:UltiSnipsJumpBackwardTrigger="<S-tab>"
 let g:UltiSnipsSnippetsDir = "~/.vim/UltiSnips"
 
 " }}}
+" PHP Documentor {{{
+
+let g:pdv_template_dir = $HOME ."/.vim/bundle/pdv/templates_snip"
+nnoremap <leader>d :call pdv#DocumentWithSnip()<cr>
+
+" }}}
 " Backups {{{
 
 " Source: https://dougblack.io/words/a-good-vimrc.html

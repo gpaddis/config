@@ -12,12 +12,12 @@ Plugin 'ctrlpvim/ctrlp.vim'
 Plugin 'itchyny/lightline.vim'
 Plugin 'StanAngeloff/php.vim'
 Plugin 'arnaud-lb/vim-php-namespace'
-"Plugin 'ervandew/supertab'
 Plugin 'stephpy/vim-php-cs-fixer'
-"Plugin 'msanders/snipmate.vim'
 Plugin 'SirVer/ultisnips'
 Plugin 'honza/vim-snippets' " The snippets for ultisnips
 Plugin 'Valloric/YouCompleteMe'
+Plugin 'tobyS/pdv'
+Plugin 'tobyS/vmustache'
 
 " NOTES
 " YouCompleteMe: read the instructions
