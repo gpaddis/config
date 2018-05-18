@@ -38,6 +38,12 @@ set wildmenu
 set foldcolumn=2                    "Set foldcolumn to make some space.
 hi foldcolumn ctermbg=bg
 
+" make YCM compatible with UltiSnips (using supertab)
+" https://stackoverflow.com/questions/14896327/ultisnips-and-youcompleteme
+let g:ycm_key_list_select_completion = ['<C-n>', '<Down>']
+let g:ycm_key_list_previous_completion = ['<C-p>', '<Up>']
+let g:SuperTabDefaultCompletionType = '<C-n>'
+
 " }}}
 " Searching {{{ 
 
@@ -152,6 +158,7 @@ nmap <leader>es :UltiSnipsEdit<cr>
 
 " If you want :UltiSnipsEdit to split your window.
 let g:UltiSnipsEditSplit="vertical"
+
 " Trigger configuration. Do not use <tab> if you use https://github.com/Valloric/YouCompleteMe.
 let g:UltiSnipsExpandTrigger="<tab>"
 let g:UltiSnipsJumpForwardTrigger="<tab>"

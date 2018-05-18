@@ -18,6 +18,7 @@ Plugin 'honza/vim-snippets' " The snippets for ultisnips
 Plugin 'Valloric/YouCompleteMe'
 Plugin 'tobyS/pdv'
 Plugin 'tobyS/vmustache'
+Plugin 'ervandew/supertab'
 
 " NOTES
 " YouCompleteMe: read the instructions
