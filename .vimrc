@@ -108,6 +108,10 @@ nmap <leader>p :! python %<cr>
 nmap vs :vsplit<cr>
 nmap sp :split<cr>
 
+" Always open splits below and right
+set splitbelow
+set splitright
+
 " Remap keys to move around split windows
 nmap <C-L> <C-W><C-L>
 nmap <C-K> <C-W><C-K>
