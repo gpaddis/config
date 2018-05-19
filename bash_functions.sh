@@ -1,10 +1,11 @@
+# Colors
+GREEN='\033[0;32m'
+NOCOLOR='\033[0m'
+
 # Print a message in green
 function printGreen {
-    local green='\033[0;32m'
-    local nocolor='\033[0m'
     local message="$1"
-
-    printf "${green}${message}${nocolor}\n"
+    printf "${GREEN}[+] ${message}${NOCOLOR}\n"
 }
 
 # If the destination file does not exist download from origin to destination

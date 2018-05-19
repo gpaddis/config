@@ -1,3 +1,8 @@
+#!/bin/bash
+# Install packages and do some configuration.
+
+source bash_functions.sh
+
 # Get Ubuntu codename - in case something needs to be installed for a specific Ubuntu version
 UBUNTU_CODENAME="$(lsb_release -c | awk '{print $NF}')"
 
@@ -40,7 +45,7 @@ do
     if ! type "phpunit$i" > /dev/null; then
         sudo wget -O /usr/local/bin/phpunit$i https://phar.phpunit.de/phpunit-$i.phar
         sudo chmod +x /usr/local/bin/phpunit$i 
-        echo "Installed phpunit$i.\n"
+        printGreen "Installed phpunit$i.\n"
     fi
 done 
 
