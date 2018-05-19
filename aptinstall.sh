@@ -1,3 +1,6 @@
+# Get Ubuntu codename - in case something needs to be installed for a specific Ubuntu version
+UBUNTU_CODENAME="$(lsb_release -c | awk '{print $NF}')"
+
 # Add Repositories and Keys
 # VS Code 
 if ! type "code" > /dev/null; then
@@ -37,7 +40,7 @@ do
     if ! type "phpunit$i" > /dev/null; then
         sudo wget -O /usr/local/bin/phpunit$i https://phar.phpunit.de/phpunit-$i.phar
         sudo chmod +x /usr/local/bin/phpunit$i 
-        echo "Installed phpunit$i."
+        echo "Installed phpunit$i.\n"
     fi
 done 
 
