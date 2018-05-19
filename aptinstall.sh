@@ -31,3 +31,13 @@ if [ ! $SHELL = '/usr/bin/zsh' ]; then
     echo "source ~/.aliases" >> $ZSHRC
 fi
 
+# Install PHPUnit 5, 6, 7
+for i in $(seq 5 7);
+do
+    if ! type "phpunit$i" > /dev/null; then
+        sudo wget -O /usr/local/bin/phpunit$i https://phar.phpunit.de/phpunit-$i.phar
+        sudo chmod +x /usr/local/bin/phpunit$i 
+        echo "Installed phpunit$i."
+    fi
+done 
+
