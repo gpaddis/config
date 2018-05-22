@@ -101,11 +101,14 @@ let g:php_cs_fixer_verbose = 0                    " Return the output of command
 nnoremap <silent><leader>pcd :call PhpCsFixerFixDirectory()<CR>
 nnoremap <silent><leader>pcf :call PhpCsFixerFixFile()<CR>
 
+" Execute PHP files
+nmap <leader>ph :! php %<cr>
+
 " }}}
 " Python {{{
 
 " Execute python files
-nmap <leader>p :! python %<cr>
+nmap <leader>py :! python %<cr>
 
 " }}}
 " Split Management {{{
