@@ -74,3 +74,21 @@ function 2fa-code {
     fi
 }
 
+# Benchmark any command, showing the seconds elapsed during execution
+function benchmark {
+    if [ "$#" -lt 1 ]; then
+        echo "You must pass a command to the benchmark function."
+        return 1
+    fi
+
+    concatenatedCommand="$1"
+    shift
+    while (( $# )); do
+        concatenatedCommand+=" $1"
+        shift
+    done
+
+    SECONDS=0
+    bash -c "$concatenatedCommand"
+    echo "\nBenchmark result: $SECONDS seconds elapsed."
+}
