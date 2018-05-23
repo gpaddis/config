@@ -102,7 +102,7 @@ nnoremap <silent><leader>pcd :call PhpCsFixerFixDirectory()<CR>
 nnoremap <silent><leader>pcf :call PhpCsFixerFixFile()<CR>
 
 " Execute PHP files
-nmap <leader>ph :! php %<cr>
+nmap <leader>ph :w<cr>:! php %<cr>
 
 " }}}
 " Python {{{
@@ -139,7 +139,7 @@ let g:ctrlp_working_path_mode=0
 "let g:ctrlp_user_command='ag %s -l --nocolor -g ""'                    "You must install silversearcher-ag for this to work.
 
 " Go to symbol in file
-nmap <C-R> :CtrlPBufTag<cr>
+nmap <S-R> :CtrlPBufTag<cr>
 
 " Go to symbol in project (requires a ctags -R first)
 nmap <C-E> :tag<space> 
