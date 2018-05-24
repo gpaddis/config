@@ -7,6 +7,7 @@ alias update="sudo apt-get update && sudo apt-get upgrade -y"
 alias lt="tree -ad -L 2"
 alias sql="mysql -uroot -p"
 alias p="vendor/bin/phpunit"
+alias rm="rm -I"
 
 # Git
 alias nah="git reset --hard;git clean -df;"
