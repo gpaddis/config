@@ -79,8 +79,8 @@ vnoremap <C-c> "+y
 inoremap jj <esc>
 
 " Fast save in normal and insert mode
-noremap <leader>w :w!<cr>
-inoremap <leader>w <esc>:bd<cr>
+noremap <leader>w :w<cr>
+inoremap <leader>w <esc>:w<cr>
 
 " Fast quit 
 nmap <leader>q :q<cr>
