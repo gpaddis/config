@@ -105,6 +105,12 @@ nnoremap <silent><leader>pcf :call PhpCsFixerFixFile()<CR>
 nmap <leader>ph :w<cr>:! php %<cr>
 
 " }}}
+" Bash {{{
+
+" Save and exec a bash script
+nmap <leader>sh :w<cr>:! bash %<cr>
+
+" }}}
 " Python {{{
 
 " Execute python files
