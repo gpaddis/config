@@ -12,4 +12,7 @@ endsnippet
 snippet mod "Get a Magento Model"
 Mage::getModel('$1');$2
 endsnippet
-	
+
+snippet mlog "Log something in Magento"
+Mage::log(${1:variable}, null, '${2:logfile}.log', true);
+endsnippet
