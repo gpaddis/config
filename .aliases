@@ -43,8 +43,12 @@ function copy {
 }
 
 # Copy the absolute path of a file
-function copypath {
-    readlink -f "$1" | xclip -sel c
+function cpath {
+    if [ "$1" != "" ]; then
+        readlink -f "$1" | xclip -sel c
+    else
+        readlink -f . | xclip -sel c
+    fi
 }
 
 # Add a two-factor autentication secret
