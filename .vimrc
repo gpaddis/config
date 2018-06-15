@@ -104,6 +104,9 @@ nnoremap <silent><leader>pcf :call PhpCsFixerFixFile()<CR>
 " Execute PHP files
 nmap <leader>ph :w<cr>:! php %<cr>
 
+" Test the current file with phpunit
+nmap <leader>t :w<cr>:! phpunit6 --color=auto %<cr>
+
 " }}}
 " Bash {{{
 
