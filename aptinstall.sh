@@ -53,5 +53,6 @@ done
 if ! type "codecept" > /dev/null; then
     sudo curl -LsS https://codeception.com/codecept.phar -o /usr/local/bin/codecept
     sudo chmod a+x /usr/local/bin/codecept
+    printGreen "Installed Codeception.\n"
 fi
 
