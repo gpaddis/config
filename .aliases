@@ -82,8 +82,9 @@ function 2fa-code {
 
 # Make a directory and cd into it
 function mdcd {
-    if [ ! -d  "$1" ]; then
-        mkdir "$1"
+    if [ -d  "$1" ]; then
+        echo "The directory $1 already exists."
+        return 1
     fi
 
     cd "$1"
