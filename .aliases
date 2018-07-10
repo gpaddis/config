@@ -87,5 +87,6 @@ function mdcd {
         return 1
     fi
 
+    mkdir "$1"
     cd "$1"
 }
