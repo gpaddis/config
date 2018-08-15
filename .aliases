@@ -18,7 +18,10 @@ alias dsource="source env/bin/activate"
 alias dmanage="python manage.py"
 
 # Magento
-alias testmag="../vendor/bin/phpunit"
+alias p="../vendor/bin/phpunit"
+alias pf="../vendor/bin/phpunit --filter "
+alias p5="phpunit5"
+alias p5f="phpunit5 --filter "
 alias Log="cd var/log"
 
 # PHP 
