@@ -1,4 +1,7 @@
 #!/bin/bash
+# Resources:
+# * https://remysharp.com/2018/08/23/cli-improved
+
 ## Install packages and do some configuration. ################################
 
 source bash_functions.sh
