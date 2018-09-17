@@ -21,6 +21,12 @@ sudo apt remove vim-tiny -y
 
 sudo apt install vim vim-gtk colordiff xclip tree dia curl zim code zsh keepassx terminator fonts-powerline build-essential cmake python-dev python3-dev oathtool gnupg2 fdupes gitk sqlitebrowser htop pinta geoip-bin -y
 
+## Install fzf (https://github.com/junegunn/fzf) ##############################
+if [ ! -d $HOME/.fzf ]; then
+    git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf
+    ~/.fzf/install
+fi
+
 ## Make zsh the default shell, install oh-my-zsh ##############################
 if [ ! $SHELL = '/usr/bin/zsh' ]; then
     $ZSHRC = $HOME/.zshrc
