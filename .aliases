@@ -9,7 +9,9 @@ alias sql="mysql -uroot -p"
 alias p="vendor/bin/phpunit"
 alias rm="rm -I"
 alias lesslast="ls -t | head -1 | xargs less"
-alias grepctx="grep -C 1 -R "
+alias grepctx="grep -C 1 -Ri "
+alias grepi="grep -i" 
+alias fd="fd -L"
 
 # Git
 alias nah="git reset --hard;git clean -df;"
