@@ -30,6 +30,12 @@ if [ ! -d $HOME/.fzf ]; then
     ~/.fzf/install
 fi
 
+## Install cht.sh  ############################################################
+if [ ! -f $HOME/bin/cht.sh ]; then
+    curl https://cht.sh/:cht.sh > $HOME/bin/cht.sh
+    chmod +x $HOME/bin/cht.sh
+fi
+
 ## Make zsh the default shell, install oh-my-zsh ##############################
 if [ ! $SHELL = '/usr/bin/zsh' ]; then
     $ZSHRC = $HOME/.zshrc
