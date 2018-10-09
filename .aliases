@@ -23,8 +23,10 @@ alias dmanage="python manage.py"
 # Magento
 alias p="../vendor/bin/phpunit"
 alias pf="../vendor/bin/phpunit --filter "
+alias pg="../vendor/bin/phpunit --group "
 alias p5="phpunit5"
 alias p5f="phpunit5 --filter "
+alias p5g="phpunit5 --group "
 alias Log="cd var/log"
 
 # PHP 
