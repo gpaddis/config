@@ -12,6 +12,7 @@ alias lesslast="ls -t | head -1 | xargs less"
 alias grepctx="grep -C 1 -Ri "
 alias grepi="grep -i" 
 alias fd="fd -L"
+alias f="cht.sh"
 
 # Git
 alias nah="git reset --hard;git clean -df;"
