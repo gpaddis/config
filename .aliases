@@ -10,7 +10,7 @@ alias p="vendor/bin/phpunit"
 alias rm="rm -I"
 alias lesslast="ls -t | head -1 | xargs less"
 alias grepctx="grep -C 1 -Ri "
-alias grepi="grep -i" 
+alias grepi="grep -i"
 alias fd="fd -L"
 alias f="cht.sh"
 
@@ -30,7 +30,7 @@ alias p5f="phpunit5 --filter "
 alias p5g="phpunit5 --group "
 alias Log="cd var/log"
 
-# PHP 
+# PHP
 # (OsX-specific)
 alias php71="/opt/php-7.1/bin/php"
 alias php56="/opt/php-5.6.30/bin/php"
@@ -98,4 +98,18 @@ function mdcd {
 
     mkdir "$1"
     cd "$1"
+}
+
+# Save a backup copy of $1 with date and time
+function backup {
+    if [ "$#" -ne 1 ]; then
+        echo "Usage: backup filename"
+        return 1
+    fi
+    local filename="$1"
+    [[ -d "$filename" ]] && cp -r $filename{,."$(date +%Y%m%d-%H%M%S)"}
+    [[ -f "$filename" ]] && cp $filename{,."$(date +%Y%m%d-%H%M%S)"}
+
+    echo "Saved a backup copy of $filename."
+    ls -la $filename*
 }

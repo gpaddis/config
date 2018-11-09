@@ -39,4 +39,3 @@ function makeSymLink {
     else printGreen "The file $destination already exists."
     fi
 }
-
