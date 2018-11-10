@@ -13,6 +13,7 @@ alias grepctx="grep -C 1 -Ri "
 alias grepi="grep -i"
 alias fd="fd -L"
 alias f="cht.sh"
+alias t="tmux"
 
 # Git
 alias nah="git reset --hard;git clean -df;"
@@ -106,6 +107,7 @@ function backup {
         echo "Usage: backup filename"
         return 1
     fi
+
     local filename="$1"
     [[ -d "$filename" ]] && cp -r $filename{,."$(date +%Y%m%d-%H%M%S)"}
     [[ -f "$filename" ]] && cp $filename{,."$(date +%Y%m%d-%H%M%S)"}
