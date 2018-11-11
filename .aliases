@@ -13,7 +13,12 @@ alias grepctx="grep -C 1 -Ri "
 alias grepi="grep -i"
 alias fd="fd -L"
 alias f="cht.sh"
+
+# Tmux
 alias t="tmux"
+alias tn="tmux new -s "
+alias ta="tmux attach-session -t "
+alias tl="tmux list-sessions"
 
 # Git
 alias nah="git reset --hard;git clean -df;"
