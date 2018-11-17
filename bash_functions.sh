@@ -3,13 +3,13 @@ GREEN='\033[0;32m'
 NOCOLOR='\033[0m'
 
 # Print a message in green
-function printGreen {
+printGreen() {
     local message="$1"
     printf "${GREEN}[+] ${message}${NOCOLOR}\n"
 }
 
 # If the destination file does not exist download from origin to destination
-function checkOrDownload {
+checkOrDownload() {
     local origin="$1" destination="$2"
 
     if [ ! -f $destination ]; then
@@ -23,13 +23,13 @@ function checkOrDownload {
 }
 
 # Check if a directory exists or create the full path
-function checkOrMakeDir {
+checkOrMakeDir() {
     local directory="$1"
     [ -d $directory ] || mkdir -p $directory
 }
 
 # Make a symlink to origin in destination if this does not exist
-function makeSymLink {
+makeSymLink() {
     local origin="$1" destination="$2"
 
     if [ ! -f $destination ]
@@ -38,4 +38,16 @@ function makeSymLink {
         printGreen "Linked $origin to $destination."
     else printGreen "The file $destination already exists."
     fi
+}
+
+# Return 1 if it can't find a command.
+# https://stackoverflow.com/a/26759734/7874784
+commandNotFound() {
+    local _command="$1"
+    [ ! -x "$(command -v $_command)" ]
+}
+
+fileNotFound() {
+    local _file="$1"
+    [ ! -f $_file ]
 }

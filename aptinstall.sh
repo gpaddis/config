@@ -2,16 +2,15 @@
 # Resources:
 # * https://remysharp.com/2018/08/23/cli-improved
 
+. bash_functions.sh
+
 ## Install packages and do some configuration. ################################
-
-source bash_functions.sh
-
 ## Get Ubuntu codename - in case something needs to be installed for a specific Ubuntu version
 UBUNTU_CODENAME="$(lsb_release -c | awk '{print $NF}')"
 
 ## Add Repositories and Keys ##################################################
 # VS Code 
-if ! type "code" > /dev/null; then
+if commandNotFound code; then
     curl https://packages.microsoft.com/keys/microsoft.asc | gpg --dearmor > microsoft.gpg
     sudo mv microsoft.gpg /etc/apt/trusted.gpg.d/microsoft.gpg
     sudo sh -c 'echo "deb [arch=amd64] https://packages.microsoft.com/repos/vscode stable main" > /etc/apt/sources.list.d/vscode.list'
@@ -31,7 +30,7 @@ if [ ! -d $HOME/.fzf ]; then
 fi
 
 ## Install cht.sh  ############################################################
-if [ ! -f $HOME/bin/cht.sh ]; then
+if fileNotFound "$HOME/bin/cht.sh"; then
     curl https://cht.sh/:cht.sh > $HOME/bin/cht.sh
     chmod +x $HOME/bin/cht.sh
 fi
@@ -57,7 +56,7 @@ fi
 ## Install PHPUnit 5, 6, 7 ####################################################
 for i in $(seq 5 7);
 do
-    if ! type "phpunit$i" > /dev/null; then
+    if commandNotFound "phpunit$i"; then
         sudo wget -O /usr/local/bin/phpunit$i https://phar.phpunit.de/phpunit-$i.phar
         sudo chmod +x /usr/local/bin/phpunit$i 
         printGreen "Installed phpunit$i.\n"
@@ -65,9 +64,13 @@ do
 done 
 
 ## Install Codeception ########################################################
-if ! type "codecept" > /dev/null; then
+if commandNotFound codecept; then
     sudo curl -LsS https://codeception.com/codecept.phar -o /usr/local/bin/codecept
     sudo chmod a+x /usr/local/bin/codecept
     printGreen "Installed Codeception.\n"
 fi
 
+# Install Tmuxinator
+if commandNotFound tmuxinator; then
+    sudo gem install tmuxinator
+fi
