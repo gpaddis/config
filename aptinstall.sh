@@ -21,7 +21,7 @@ sudo apt update && sudo apt upgrade -y
 
 sudo apt remove vim-tiny -y
 
-sudo apt install vim vim-gtk colordiff xclip tree dia curl zim code zsh keepassx terminator fonts-powerline build-essential cmake python-dev python3-dev oathtool gnupg2 fdupes gitk sqlitebrowser htop pinta geoip-bin ncdu -y
+sudo apt install vim vim-gtk colordiff xclip tree dia curl zim code zsh keepassx terminator fonts-powerline build-essential cmake python-dev python3-dev oathtool gnupg2 fdupes gitk sqlitebrowser htop pinta geoip-bin ncdu tmux -y
 
 ## Install fzf (https://github.com/junegunn/fzf) ##############################
 if [ ! -d $HOME/.fzf ]; then
@@ -73,4 +73,13 @@ fi
 # Install Tmuxinator
 if commandNotFound tmuxinator; then
     sudo gem install tmuxinator
+    printGreen "Installed tmuxinator"
+fi
+
+tmuxinatorCompletion="$HOME/bin/tmuxinator.zsh"
+if fileNotFound "$tmuxinatorCompletion"; then
+    wget -O $tmuxinatorCompletion https://raw.githubusercontent.com/tmuxinator/tmuxinator/master/completion/tmuxinator.zsh 
+    chmod +x $tmuxinatorCompletion
+    echo "source $tmuxinatorCompletion" >> $HOME/.zshrc 
+    printGreen "Tmuxinator completion added to path."
 fi
