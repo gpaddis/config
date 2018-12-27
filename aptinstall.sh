@@ -37,7 +37,7 @@ fi
 
 ## Make zsh the default shell, install oh-my-zsh ##############################
 if [ ! $SHELL = '/usr/bin/zsh' ]; then
-    $ZSHRC=$HOME/.zshrc
+    ZSHRC=$HOME/.zshrc
 
     chsh -s $(which zsh)
     sh -c "$(wget https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh -O -)"
