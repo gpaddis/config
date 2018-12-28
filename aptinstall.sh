@@ -11,7 +11,10 @@ UBUNTU_CODENAME="$(lsb_release -c | awk '{print $NF}')"
 ZSHRC=$HOME/.zshrc
 checkOrMakeDir "$HOME/bin"
 
-# VS Code 
+# Import the custom aliases
+appendStringToFile "source ~/.aliases" $ZSHRC
+
+# VS Code
 if commandNotFound code; then
     curl https://packages.microsoft.com/keys/microsoft.asc | gpg --dearmor > microsoft.gpg
     sudo mv microsoft.gpg /etc/apt/trusted.gpg.d/microsoft.gpg
@@ -45,12 +48,6 @@ if [ ! $SHELL = '/usr/bin/zsh' ]; then
     # Set the default user in the .zshrc
     appendStringToFile "# Hide the default user name from the prompt" $ZSHRC
     appendStringToFile "DEFAULT_USER=\"$USER\"" $ZSHRC
-
-    # Use agnoster theme instead of default (robbyrussell)
-    sed -i -e 's/robbyrussell/agnoster/g' $ZSHRC 
-
-    # Import the custom aliases
-    appendStringToFile "source ~/.aliases" $ZSHRC
 fi
 
 # Install PHPUnit 5, 6, 7
@@ -58,10 +55,10 @@ for i in $(seq 5 7);
 do
     if commandNotFound "phpunit$i"; then
         sudo wget -O /usr/local/bin/phpunit$i https://phar.phpunit.de/phpunit-$i.phar
-        sudo chmod +x /usr/local/bin/phpunit$i 
+        sudo chmod +x /usr/local/bin/phpunit$i
         printGreen "Installed phpunit$i.\n"
     fi
-done 
+done
 
 # Install Codeception
 if commandNotFound codecept; then
@@ -73,12 +70,12 @@ fi
 # Install Tmuxinator
 if commandNotFound tmuxinator; then
     sudo gem install tmuxinator
-    printGreen "Installed tmuxinator"
+    printGreen "Installed tmuxinator.\n"
 fi
 
 tmuxinatorCompletion="$HOME/bin/tmuxinator.zsh"
 if fileNotFound "$tmuxinatorCompletion"; then
-    wget -O $tmuxinatorCompletion https://raw.githubusercontent.com/tmuxinator/tmuxinator/master/completion/tmuxinator.zsh 
+    wget -O $tmuxinatorCompletion https://raw.githubusercontent.com/tmuxinator/tmuxinator/master/completion/tmuxinator.zsh
     chmod +x $tmuxinatorCompletion
     appendStringToFile "source $tmuxinatorCompletion" $ZSHRC
     printGreen "Tmuxinator completion added to path."
