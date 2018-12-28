@@ -8,6 +8,8 @@
 ## Get Ubuntu codename - in case something needs to be installed for a specific Ubuntu version
 UBUNTU_CODENAME="$(lsb_release -c | awk '{print $NF}')"
 
+ZSHRC=$HOME/.zshrc
+
 ## Add Repositories and Keys ##################################################
 # VS Code 
 if commandNotFound code; then
@@ -31,26 +33,25 @@ fi
 
 ## Install cht.sh  ############################################################
 if fileNotFound "$HOME/bin/cht.sh"; then
+    # TODO: check if bin exists or create it
     curl https://cht.sh/:cht.sh > $HOME/bin/cht.sh
     chmod +x $HOME/bin/cht.sh
 fi
 
 ## Make zsh the default shell, install oh-my-zsh ##############################
 if [ ! $SHELL = '/usr/bin/zsh' ]; then
-    ZSHRC=$HOME/.zshrc
-
     chsh -s $(which zsh)
     sh -c "$(wget https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh -O -)"
 
     # Set the default user in the .zshrc
-    echo "# Hide the default user name from the prompt" >> $ZSHRC
-    echo DEFAULT_USER=\"$USER\" >> $ZSHRC
+    appendStringToFile "# Hide the default user name from the prompt" $ZSHRC
+    appendStringToFile "DEFAULT_USER=\"$USER\"" $ZSHRC
 
     # Use agnoster theme instead of default (robbyrussell)
     sed -i -e 's/robbyrussell/agnoster/g' $ZSHRC 
 
     # Import the custom aliases
-    echo "source ~/.aliases" >> $ZSHRC
+    appendStringToFile "source ~/.aliases" $ZSHRC
 fi
 
 ## Install PHPUnit 5, 6, 7 ####################################################
@@ -80,6 +81,6 @@ tmuxinatorCompletion="$HOME/bin/tmuxinator.zsh"
 if fileNotFound "$tmuxinatorCompletion"; then
     wget -O $tmuxinatorCompletion https://raw.githubusercontent.com/tmuxinator/tmuxinator/master/completion/tmuxinator.zsh 
     chmod +x $tmuxinatorCompletion
-    echo "source $tmuxinatorCompletion" >> $HOME/.zshrc 
+    appendStringToFile "source $tmuxinatorCompletion" $ZSHRC
     printGreen "Tmuxinator completion added to path."
 fi

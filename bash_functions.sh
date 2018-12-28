@@ -45,8 +45,17 @@ commandNotFound() {
     [ ! -x "$(command -v $_command)" ]
 }
 
-# Return 1 if it can't find a file
+# Return 1 if it can't find a file.
 fileNotFound() {
     local _file="$1"
     [ ! -f $_file ]
+}
+
+# Append a string to a file, skip if the string already exists.
+appendStringToFile() {
+    local string="$1"
+    local filename="$2"
+    if [[ ! $(grep $string $filename) ]]; then
+        echo $string >> $filename
+    fi
 }
