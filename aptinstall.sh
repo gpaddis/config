@@ -67,6 +67,12 @@ if commandNotFound codecept; then
     printGreen "Installed Codeception.\n"
 fi
 
+# Install Tmux Plugin Manager
+if fileNotFound "$HOME/.tmux/plugins/tpm/tpm"; then
+    git clone https://github.com/tmux-plugins/tpm $HOME/.tmux/plugins/tpm
+    printGreen "Installed Tmux Plugin Manager.\n"
+fi
+
 # Install Tmuxinator
 if commandNotFound tmuxinator; then
     sudo gem install tmuxinator
