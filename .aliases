@@ -67,6 +67,7 @@ function cpath {
     fi
 }
 
+# 2fa tutorial: https://etherarp.net/google-authenticator-without-a-phone/
 # Add a two-factor autentication secret
 function 2fa-add-secret {
     if [ "$#" -ne 3 ]; then
