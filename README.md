@@ -4,3 +4,6 @@ Clone the repo in a folder in the home directory, then run the shell scripts.
 
 ### TBD
 Add SSH passphrase to keychain: https://superuser.com/a/442691
+
+### TODOs
+* Install PHP codesniffer
