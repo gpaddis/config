@@ -11,12 +11,12 @@ printGreen() {
 # If the destination file does not exist download from origin to destination
 checkOrDownload() {
     local origin="$1" destination="$2"
-    if [ ! -f $destination ]; then
+    if [ ! -f "$destination" ]; then
         printGreen "Could not find $destination. Installation..."
         # Use wget or curl
         if [ $(command -v wget) ]
-        then wget $origin -O $destination
-        else curl -o $destination $origin
+        then wget "$origin" -O "$destination"
+        else curl -o "$destination" "$origin"
         fi
     fi
 }
@@ -30,9 +30,9 @@ checkOrMakeDir() {
 # Make a symlink to origin in destination if this does not exist
 makeSymLink() {
     local origin="$1" destination="$2"
-    if [ ! -f $destination ]
+    if [ ! -f "$destination" ]
     then
-        ln -sn $origin $destination
+        ln -sn "$origin" "$destination"
         printGreen "Linked $origin to $destination."
     else printGreen "The file $destination already exists."
     fi
@@ -55,7 +55,7 @@ fileNotFound() {
 appendStringToFile() {
     local string="$1"
     local filename="$2"
-    if [[ ! $(grep $string $filename) ]]; then
-        echo $string >> $filename
+    if [[ ! $(grep "$string" "$filename") ]]; then
+        echo "$string" >> "$filename"
     fi
 }
