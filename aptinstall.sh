@@ -26,7 +26,11 @@ sudo apt update && sudo apt upgrade -y
 
 sudo apt remove vim-tiny -y
 
-sudo apt install vim vim-gtk colordiff xclip tree dia curl zim code zsh keepassx terminator fonts-powerline build-essential cmake python-dev python3-dev oathtool gnupg2 fdupes gitk sqlitebrowser htop geoip-bin ncdu tmux fd-find -y
+# Basic packages
+sudo apt install -y vim vim-gtk colordiff xclip tree dia curl zim code zsh keepassx terminator fonts-powerline build-essential cmake python-dev python3-dev oathtool gnupg2 fdupes gitk sqlitebrowser htop geoip-bin ncdu tmux
+
+# Optional packages
+sudo apt install -y fd-find
 
 # Install fzf (https://github.com/junegunn/fzf)
 if [ ! -d $HOME/.fzf ]; then
