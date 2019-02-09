@@ -24,7 +24,7 @@ fi
 # Install the software required.
 sudo apt update && sudo apt upgrade -y
 
-sudo apt remove vim-tiny -y
+sudo apt remove -y vim-tiny
 
 # Basic packages
 sudo apt install -y vim vim-gtk colordiff xclip tree dia curl zim code zsh keepassx terminator fonts-powerline build-essential cmake python-dev python3-dev oathtool gnupg2 fdupes gitk sqlitebrowser htop geoip-bin ncdu tmux
