@@ -189,12 +189,17 @@ nnoremap <leader>d :call pdv#DocumentWithSnip()<cr>
 " }}}
 " Backups {{{
 
+" Don't keep backups of modified files.
+set nobackup
+set nowritebackup
+
+" Disabled:
 " Source: https://dougblack.io/words/a-good-vimrc.html
-set backup
-set backupdir=~/.vim-tmp,~/.tmp,~/tmp,/var/tmp,/tmp
-set backupskip=/tmp/*,/private/tmp/*
-set directory=~/.vim-tmp,~/.tmp,~/tmp,/var/tmp,/tmp
-set writebackup
+"set backup
+"set backupdir=~/.vim-tmp,~/.tmp,~/tmp,/var/tmp,/tmp
+"set backupskip=/tmp/*,/private/tmp/*
+"set directory=~/.vim-tmp,~/.tmp,~/tmp,/var/tmp,/tmp
+"set writebackup
 
 " }}}
 " AutoGroups {{{
