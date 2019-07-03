@@ -67,36 +67,6 @@ function cpath {
     fi
 }
 
-# 2fa tutorial: https://etherarp.net/google-authenticator-without-a-phone/
-# Add a two-factor autentication secret
-function 2fa-add-secret {
-    if [ "$#" -ne 3 ]; then
-        echo "Usage: 2fa-add-secret serviceName secret recipient"
-        return 1
-    fi
-
-    local serviceName="$1" secret="$2" recipient="$3"
-    echo $secret | gpg2 --encrypt --recipient $recipient --output $HOME/.2fa/$serviceName
-    echo "The encrypted 2fa secret was saved in $HOME/.2fa/$serviceName."
-}
-
-# Decrypt the 2fa secret, generate the code and copy it to the clipboard
-function 2fa-code {
-    if [ "$#" -ne 2 ]; then
-        echo "Usage: 2fa-code serviceName recipient"
-        return 1
-    fi
-
-    local serviceName="$1" recipient="$2"
-    if [ -f $HOME/.2fa/$serviceName ]; then
-        secret="$(gpg2 --quiet --decrypt $HOME/.2fa/$serviceName 2>/dev/null)"
-        oathtool --base32 --totp $secret | xclip -sel c
-        echo "The 2fa code was copied to the clipboard."
-    else
-        echo "No secret associated with service $serviceName."
-    fi
-}
-
 # Make a directory and cd into it
 function mdcd {
     if [ -d  "$1" ]; then
