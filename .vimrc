@@ -120,6 +120,12 @@ nmap <leader>sh :w<cr>:! bash %<cr>
 nmap <leader>py :! python %<cr>
 
 " }}}
+" Ruby {{{
+
+" Execute Ruby files
+nmap <leader>rb :! ruby %<cr>
+
+" }}}
 " Split Management {{{
 
 " Open splits
