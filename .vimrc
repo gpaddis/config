@@ -167,6 +167,8 @@ set wildignore+=*/tmp/*,*.so,*.swp,*.zip,*/.git/*
 " NERDTree {{{
 
 let NERDTreeHijackNetrw = 0         "Avoid conflicts with vinegar.
+let NERDTreeShowHidden = 1          "Show hidden files by default.
+
 nmap <C-B> :NERDTreeToggle<cr>
 
 " }}}a
