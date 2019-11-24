@@ -18,4 +18,3 @@ commandNotFound http && brew install httpie
 commandNotFound fzf && brew install fzf && $(brew --prefix)/opt/fzf/install
 
 printGreen "Installation complete."
-exit 0
