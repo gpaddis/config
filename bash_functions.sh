@@ -2,6 +2,14 @@
 GREEN='\033[0;32m'
 NOCOLOR='\033[0m'
 
+# Return a 0 status if on a Mac OS.
+isMacOS() {
+    case `uname -s` in
+        Darwin) return 0 ;;
+        *) return 1 ;;
+    esac
+}
+
 # Print a message in green
 printGreen() {
     local message="$1"
