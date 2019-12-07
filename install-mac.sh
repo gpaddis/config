@@ -12,6 +12,7 @@ commandNotFound brew && /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercon
 installIfMissing fd
 installIfMissing zim
 installIfMissing tmux
+installIfMissing ncdu
 installIfMissing goaccess
 
 commandNotFound http && brew install httpie
