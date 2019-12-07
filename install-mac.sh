@@ -13,6 +13,7 @@ installIfMissing fd
 installIfMissing zim
 installIfMissing tmux
 installIfMissing ncdu
+installIfMissing openvpn
 installIfMissing goaccess
 
 commandNotFound http && brew install httpie
