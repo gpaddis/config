@@ -46,6 +46,8 @@ alias php56="/opt/php-5.6.30/bin/php"
 # Create the tags to work with Vim + CtrlP
 alias createtags='ctags -R --PHP-kinds=cfi --regex-php="/^[ \t]*trait[ \t]+([a-z0_9_]+)/\1/t,traits/i"'
 
+# Ruby
+alias rbenv-doctor="curl -fsSL https://github.com/rbenv/rbenv-installer/raw/master/bin/rbenv-doctor | bash"
 ### FUNCTIONS ##############################################
 
 # Copy the content of a file to the clipboard
