@@ -20,3 +20,8 @@ commandNotFound http && brew install httpie
 commandNotFound fzf && brew install fzf && $(brew --prefix)/opt/fzf/install
 
 printGreen "Installation complete."
+
+# Save the SSH passphrase in the Keychain.
+grep 'UseKeychain yes' $HOME/.ssh/config || {
+    echo -e "Host *\n    UseKeychain yes" >> $HOME/.ssh/config
+}
