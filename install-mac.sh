@@ -18,6 +18,7 @@ installIfMissing goaccess
 
 commandNotFound http && brew install httpie
 commandNotFound fzf && brew install fzf && $(brew --prefix)/opt/fzf/install
+[ -z $(brew list | grep coreutils) ] && brew install coreutils
 
 printGreen "Installation complete."
 
