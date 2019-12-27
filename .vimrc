@@ -201,6 +201,9 @@ nnoremap <leader>d :call pdv#DocumentWithSnip()<cr>
 set nobackup
 set nowritebackup
 
+" Save swap files in a single directory.
+set directory^=$HOME/.vim/tmp//
+
 " Disabled:
 " Source: https://dougblack.io/words/a-good-vimrc.html
 "set backup

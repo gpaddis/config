@@ -13,6 +13,7 @@ makeSymLink $PWD/.aliases $HOME/.aliases
 # Link the snippets
 [ -d $VIMDIR/UltiSnips ] || makeSymLink $PWD/UltiSnips $VIMDIR/UltiSnips
 
+checkOrMakeDir $VIMDIR/tmp
 checkOrMakeDir $VIMDIR/colors
 
 # Install Vundle if it is not present
