@@ -135,6 +135,9 @@ nmap <leader>py :! python %<cr>
 " Execute Ruby files
 nmap <leader>rb :! ruby %<cr>
 
+" Rails: run tests
+nmap <leader>rt :! clear && rails test<cr>
+
 " }}}
 " Split Management {{{
 
