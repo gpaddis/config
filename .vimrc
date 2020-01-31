@@ -88,6 +88,16 @@ nmap <leader>q :q<cr>
 " Unfold with +
 nmap + za
 
+" Autocomplete brackets
+" https://stackoverflow.com/questions/21316727/automatic-closing-brackets-for-vim
+inoremap " ""<left>
+inoremap ' ''<left>
+inoremap ( ()<left>
+inoremap [ []<left>
+inoremap { {}<left>
+inoremap {<CR> {<CR>}<ESC>O
+inoremap {;<CR> {<CR>};<ESC>O
+
 " }}}
 " PHP {{{
 
