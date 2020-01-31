@@ -133,7 +133,7 @@ nmap <leader>py :! python %<cr>
 " Ruby {{{
 
 " Execute Ruby files
-nmap <leader>rb :! ruby %<cr>
+nmap <leader>rb :! clear && ruby %<cr>
 
 " Rails: run tests
 nmap <leader>rt :! clear && rails test<cr>
