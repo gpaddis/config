@@ -98,6 +98,11 @@ inoremap { {}<left>
 inoremap {<CR> {<CR>}<ESC>O
 inoremap {;<CR> {<CR>};<ESC>O
 
+" Toogle paste mode
+nmap <leader>pa :set paste<cr>()<left>()<left>()<left>
+nmap <leader>pn :set nopaste<cr>()<left>()<left>()<left>
+
+"
 " }}}
 " PHP {{{
 
