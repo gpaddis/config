@@ -7,7 +7,7 @@ so ~/.vim/plugins.vim               "Source the plugins file
 "   * A good vimrc: https://dougblack.io/words/a-good-vimrc.html. Here are the
 "     instructions to structure the .vimrc file in sections.
 "   * Vim as a PHP Ide: http://web-techno.net/vim-php-ide/
-" 
+"
 " Inspiration:
 "   * https://gist.github.com/JeffreyWay/6753834
 "   * https://github.com/rosetree/tildeslash/blob/master/.vimrc
@@ -45,7 +45,7 @@ let g:ycm_key_list_previous_completion = ['<C-k>', '<Up>']
 let g:SuperTabDefaultCompletionType = '<C-n>'
 
 " }}}
-" Searching {{{ 
+" Searching {{{
 
 set hlsearch
 set incsearch
@@ -82,7 +82,7 @@ inoremap jj <esc>
 noremap <leader>w :w<cr>
 inoremap <leader>w <esc>:w<cr>
 
-" Fast quit 
+" Fast quit
 nmap <leader>q :q<cr>
 
 " Unfold with +
@@ -175,7 +175,7 @@ let g:ctrlp_follow_symlinks=1
 nmap <S-R> :CtrlPBufTag<cr>
 
 " Go to symbol in project (requires a ctags -R first)
-nmap <C-E> :tag<space> 
+nmap <C-E> :tag<space>
 
 " Ignore these files and folders when calling CtrlP
 set wildignore+=*/tmp/*,*.so,*.swp,*.zip,*/.git/*
@@ -194,6 +194,7 @@ nmap <C-B> :NERDTreeToggle<cr>
 let g:ale_fixers = {
 \   '*': ['remove_trailing_lines', 'trim_whitespace'],
 \   'ruby': ['rubocop'],
+\   'php': ['php_cs_fixer'],
 \}
 
 " Set this variable to 1 to fix files when you save them.
