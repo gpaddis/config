@@ -188,7 +188,18 @@ let NERDTreeShowHidden = 1          "Show hidden files by default.
 
 nmap <C-B> :NERDTreeToggle<cr>
 
-" }}}a
+" }}}
+" ALE {{{
+" https://github.com/dense-analysis/ale#2ii-fixing
+let g:ale_fixers = {
+\   '*': ['remove_trailing_lines', 'trim_whitespace'],
+\   'ruby': ['rubocop'],
+\}
+
+" Set this variable to 1 to fix files when you save them.
+let g:ale_fix_on_save = 1
+
+" }}}
 " UltiSnips {{{
 
 " Edit the snippets

@@ -19,6 +19,7 @@ Plugin 'Valloric/YouCompleteMe'
 Plugin 'tobyS/pdv'
 Plugin 'tobyS/vmustache'
 Plugin 'ervandew/supertab'
+Plugin 'dense-analysis/ale'
 
 " Ruby development
 " https://medium.com/@todariasova/rails-vim-101-essential-vim-plugins-for-ruby-on-rails-development-d74e808d186d
