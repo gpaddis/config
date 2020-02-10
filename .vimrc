@@ -169,6 +169,7 @@ let g:ctrlp_match_window = 'top,order:ttb,min:1,max:30,results:25'
 let g:ctrlp_switch_buffer=0
 let g:ctrlp_working_path_mode=0
 let g:ctrlp_follow_symlinks=1
+let g:ctrlp_show_hidden = 1
 "let g:ctrlp_user_command='ag %s -l --nocolor -g ""'                    "You must install silversearcher-ag for this to work.
 
 " Go to symbol in file
