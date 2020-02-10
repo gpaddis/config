@@ -20,7 +20,7 @@ sudo apt update && sudo apt upgrade -y
 sudo apt remove -y vim-tiny
 
 # Basic packages
-sudo apt install -y curl vim vim-gtk colordiff xclip tree curl zim code zsh keepassx fonts-powerline build-essential cmake python-dev python3-dev oathtool gnupg2 fdupes gitk sqlitebrowser htop geoip-bin ncdu tmux golang-go
+sudo apt install -y curl vim vim-gtk colordiff xclip tree curl zim code zsh keepassx fonts-powerline build-essential cmake python-dev python3-dev oathtool gnupg2 fdupes gitk sqlitebrowser htop geoip-bin ncdu tmux golang-go jq
 
 # Optional packages
 sudo apt install -y fd-find
