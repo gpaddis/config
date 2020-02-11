@@ -191,6 +191,10 @@ nmap <C-B> :NERDTreeToggle<cr>
 
 " }}}
 " ALE {{{
+
+" Autofix errors
+noremap <leader>f :ALEFix<cr>
+
 " https://github.com/dense-analysis/ale#2ii-fixing
 let g:ale_fixers = {
 \   '*': ['remove_trailing_lines', 'trim_whitespace'],
@@ -199,7 +203,7 @@ let g:ale_fixers = {
 \}
 
 " Set this variable to 1 to fix files when you save them.
-let g:ale_fix_on_save = 1
+"let g:ale_fix_on_save = 1
 
 " }}}
 " UltiSnips {{{
