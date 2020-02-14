@@ -25,6 +25,9 @@ Plugin 'dense-analysis/ale'
 " https://medium.com/@todariasova/rails-vim-101-essential-vim-plugins-for-ruby-on-rails-development-d74e808d186d
 Plugin 'vim-ruby/vim-ruby'
 
+" Themes
+Plugin 'sonph/onehalf', {'rtp': 'vim/'}
+
 " NOTES
 " YouCompleteMe: read the instructions
 " https://github.com/Valloric/YouCompleteMe
