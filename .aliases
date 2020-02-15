@@ -13,7 +13,6 @@ alias grepi="grep -i"
 alias fd="fd -L"
 alias f="cht.sh"
 alias cleanformatting='sed -r "s/\x1B\[([0-9]{1,2}(;[0-9]{1,2})?)?[mGK]//g"'
-alias dockerCleanupDanglingImages="docker rmi $(docker images -a --filter=dangling=true -q)"
 
 # Tmux
 alias t="tmux"
@@ -50,7 +49,7 @@ alias createtags='ctags -R --PHP-kinds=cfi --regex-php="/^[ \t]*trait[ \t]+([a-z
 alias rbenv-doctor="curl -fsSL https://github.com/rbenv/rbenv-installer/raw/master/bin/rbenv-doctor | bash"
 ### FUNCTIONS ##############################################
 
-# Copy the content of a file to the clipboard
+# Copy the content of a file to the clipboard.
 function copy {
     if [ "$1" != "" ]
     then
@@ -61,7 +60,7 @@ function copy {
     fi
 }
 
-# Copy the absolute path of a file
+# Copy the absolute path of a file.
 function cpath {
     if [ "$1" != "" ]; then
         readlink -f "$1" | xclip -sel c
@@ -70,7 +69,7 @@ function cpath {
     fi
 }
 
-# Make a directory and cd into it
+# Make a directory and cd into it.
 function mdcd {
     if [ -d  "$1" ]; then
         echo "The directory $1 already exists."
@@ -81,7 +80,7 @@ function mdcd {
     cd "$1"
 }
 
-# Save a backup copy of $1 with date and time
+# Save a backup copy of $1 with date and time.
 function backup {
     if [ "$#" -ne 1 ]; then
         echo "Usage: backup filename"
@@ -94,4 +93,9 @@ function backup {
 
     echo "Saved a backup copy of $filename."
     ls -la $filename*
+}
+
+# Cleanup unused docker images.
+function dockerCleanupDanglingImages {
+    docker rmi $(docker images -a --filter=dangling=true -q)
 }
