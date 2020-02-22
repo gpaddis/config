@@ -47,6 +47,7 @@ alias createtags='ctags -R --PHP-kinds=cfi --regex-php="/^[ \t]*trait[ \t]+([a-z
 
 # Ruby
 alias be="bundle exec"
+alias rt="rails test"
 alias rbenv-doctor="curl -fsSL https://github.com/rbenv/rbenv-installer/raw/master/bin/rbenv-doctor | bash"
 
 ### FUNCTIONS ##############################################
