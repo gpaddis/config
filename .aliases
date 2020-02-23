@@ -23,6 +23,7 @@ alias tk="tmux kill-session -t"
 
 # Git
 alias nah="git reset --hard;git clean -df;"
+alias gs="gst" # Stop running ghostscript by accident!
 
 # Django Dev
 alias dsource="source env/bin/activate"
