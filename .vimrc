@@ -34,6 +34,7 @@ set tabstop=4                       "Indent with 4 spaces https://stackoverflow.
 set shiftwidth=4
 set expandtab
 set wildmenu
+set backspace=indent,eol,start
 
 set foldcolumn=2                    "Set foldcolumn to make some space.
 hi foldcolumn ctermbg=bg
@@ -141,6 +142,10 @@ nmap <leader>rb :! clear && ruby %<cr>
 
 " Rails: run tests
 nmap <leader>rt :! clear && rails test<cr>
+
+" Rspec: run tests
+nmap <leader>rs :! clear && bundle exec rspec<cr>
+
 
 " }}}
 " Split Management {{{
