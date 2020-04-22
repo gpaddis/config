@@ -1,6 +1,7 @@
 ### ALIASES ################################################
 
 # Terminal
+alias vi="nvim"
 alias cls="clear"
 alias diff="colordiff"
 alias update="sudo apt-get update && sudo apt-get upgrade -y"
