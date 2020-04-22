@@ -26,6 +26,9 @@ Plugin 'junegunn/goyo.vim'
 Plugin 'godlygeek/tabular'
 Plugin 'plasticboy/vim-markdown'
 
+" Vimwiki: https://github.com/vimwiki/vimwiki
+Plugin 'vimwiki/vimwiki'
+
 " Ruby development
 " https://medium.com/@todariasova/rails-vim-101-essential-vim-plugins-for-ruby-on-rails-development-d74e808d186d
 Plugin 'vim-ruby/vim-ruby'
