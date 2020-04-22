@@ -26,6 +26,13 @@ filetype indent plugin on
 
 set laststatus=2    " Always show the status line.
 
+" Goyo settings: https://github.com/junegunn/goyo.vim
+let g:goyo_width = 200
+
+" Markdown syntax
+" https://github.com/plasticboy/vim-markdown
+let g:vim_markdown_folding_disabled = 1
+set conceallevel=2
 
 " }}}
 " Spaces & Tabs {{{
