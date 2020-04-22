@@ -35,6 +35,14 @@ let g:vim_markdown_folding_disabled = 1
 set conceallevel=2
 
 " }}}
+" Neovim-specific Settings {{{
+
+if (has("nvim"))
+  "For Neovim 0.1.3 and 0.1.4 < https://github.com/neovim/neovim/pull/2198 >
+  let $NVIM_TUI_ENABLE_TRUE_COLOR=1
+endif
+
+" }}}
 " Spaces & Tabs {{{
 
 set tabstop=4                       "Indent with 4 spaces https://stackoverflow.com/a/234578/7874784
