@@ -21,7 +21,7 @@ set background=dark
 set t_Co=256
 
 let g:monokai_term_italic = 1
-colorscheme badwolf
+colorscheme material-monokai
 filetype indent plugin on
 
 set laststatus=2    " Always show the status line.

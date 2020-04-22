@@ -36,6 +36,7 @@ Plugin 'tpope/vim-rails'
 
 " Themes
 Plugin 'sonph/onehalf', {'rtp': 'vim/'}
+Plugin 'drewtempelmeyer/palenight.vim'
 
 " NOTES
 " YouCompleteMe: read the instructions
