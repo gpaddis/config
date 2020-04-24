@@ -21,6 +21,7 @@ Plugin 'tobyS/vmustache'
 Plugin 'ervandew/supertab'
 Plugin 'dense-analysis/ale'
 Plugin 'junegunn/goyo.vim'
+Plugin 'mattn/calendar-vim'
 
 " Markdown: check out https://github.com/plasticboy/vim-markdown
 Plugin 'godlygeek/tabular'
@@ -28,6 +29,7 @@ Plugin 'plasticboy/vim-markdown'
 
 " Vimwiki: https://github.com/vimwiki/vimwiki
 Plugin 'vimwiki/vimwiki'
+Plugin 'chazy/dirsettings' " Set specific settings per directory
 
 " Ruby development
 " https://medium.com/@todariasova/rails-vim-101-essential-vim-plugins-for-ruby-on-rails-development-d74e808d186d
@@ -46,4 +48,3 @@ Plugin 'joshdick/onedark.vim'
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
 filetype plugin indent on    " required
-
