@@ -22,6 +22,7 @@ Plugin 'ervandew/supertab'
 Plugin 'dense-analysis/ale'
 Plugin 'junegunn/goyo.vim'
 Plugin 'mattn/calendar-vim'
+Plugin 'tpope/vim-surround' " Easily surround a word with quotes etc.
 
 " Markdown: check out https://github.com/plasticboy/vim-markdown
 Plugin 'godlygeek/tabular'

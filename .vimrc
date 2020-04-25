@@ -180,6 +180,15 @@ nmap <C-J> <C-W><C-J>
 nmap <C-H> <C-W><C-H>
 
 " }}}
+" VimWiki {{{
+
+" Autoexport vimwiki to HTML to publish to Gitlab pages.
+" https://docs.gitlab.com/ee/user/project/pages/
+let g:vimwiki_list = [{'path': '~/vimwiki/',
+                       \ 'path_html': '~/vimwiki/public',
+                       \ 'auto_export': 1}]
+
+" }}}
 " CtrlP {{{
 
 let g:ctrlp_custom_ignore = {
