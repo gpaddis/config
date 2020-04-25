@@ -183,7 +183,6 @@ nmap <C-H> <C-W><C-H>
 " VimWiki {{{
 
 let g:vimwiki_list = [{'path': '~/vimwiki/',
-                       \ 'path_html': '~/vimwiki/public',
                        \ 'auto_export': 1}]
 
 " }}}
