@@ -48,6 +48,7 @@ endif
 set tabstop=4                       "Indent with 4 spaces https://stackoverflow.com/a/234578/7874784
 set shiftwidth=4
 set expandtab
+set linebreak
 set wildmenu
 set backspace=indent,eol,start
 
