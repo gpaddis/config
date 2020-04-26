@@ -183,7 +183,11 @@ nmap <C-H> <C-W><C-H>
 " VimWiki {{{
 
 let g:vimwiki_list = [{'path': '~/vimwiki/',
+                       \ 'path_html': '~/vimwiki/html',
                        \ 'auto_export': 1}]
+
+" GOTO page
+nmap <leader>wg :VimwikiGoto<space>
 
 " }}}
 " CtrlP {{{
