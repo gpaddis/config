@@ -189,6 +189,9 @@ let g:vimwiki_list = [{'path': '~/vimwiki/',
 " GOTO page
 nmap <leader>wg :VimwikiGoto<space>
 
+" Add an empty checkbox in insert mode
+inoremap <C-Space> - [ ]<space>
+
 " }}}
 " CtrlP {{{
 
