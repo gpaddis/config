@@ -118,7 +118,9 @@ inoremap {;<CR> {<CR>};<ESC>O
 " Toogle paste mode
 nmap <leader>pa :set invpaste<cr>
 
-"
+" Make a markdown link
+let @k="bi(lxea)[a"
+
 " }}}
 " PHP {{{
 
