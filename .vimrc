@@ -38,8 +38,8 @@ set conceallevel=2
 " Neovim-specific Settings {{{
 
 if (has("nvim"))
-  "For Neovim 0.1.3 and 0.1.4 < https://github.com/neovim/neovim/pull/2198 >
-  let $NVIM_TUI_ENABLE_TRUE_COLOR=1
+"For Neovim 0.1.3 and 0.1.4 < https://github.com/neovim/neovim/pull/2198 >
+let $NVIM_TUI_ENABLE_TRUE_COLOR=1
 endif
 
 " }}}
@@ -118,7 +118,10 @@ inoremap {;<CR> {<CR>};<ESC>O
 " Toogle paste mode
 nmap <leader>pa :set invpaste<cr>
 
-" Make a markdown link
+" }}}
+" {{{ Macros
+
+" Make a markdown (link)[]
 let @k="bi(lxea)[a"
 
 " }}}
@@ -186,8 +189,8 @@ nmap <C-H> <C-W><C-H>
 " VimWiki {{{
 
 let g:vimwiki_list = [{'path': '~/vimwiki/',
-                       \ 'path_html': '~/vimwiki/html',
-                       \ 'auto_export': 1}]
+                   \ 'path_html': '~/vimwiki/html',
+                   \ 'auto_export': 1}]
 
 " GOTO page
 nmap <leader>wg :VimwikiGoto<space>
