@@ -188,9 +188,24 @@ nmap <C-H> <C-W><C-H>
 " }}}
 " VimWiki {{{
 
-let g:vimwiki_list = [{'path': '~/vimwiki/',
-                   \ 'path_html': '~/vimwiki/html',
-                   \ 'auto_export': 1}]
+let default_wiki = {'path': '~/vimwiki/',
+                  \ 'path_html': '~/vimwiki/html',
+                  \ 'auto_export': 1}
+
+let g:vimwiki_list = [default_wiki]
+
+" Add other local wikis in local_wikis.vim like this:
+"
+" let personal_wiki = {'path': '~/personal_wiki/'}
+" let g:vimwiki_list = add(g:vimwiki_list, personal_wiki)
+"
+" Then select the one you want with <leader>ws. or go to the second like
+" 2<leader>ww.
+"
+" glob: see https://vi.stackexchange.com/a/11572
+if glob('~/.vim/local_wikis.vim')!=#""
+    source ~/.vim/local_wikis.vim
+endif
 
 " GOTO page
 nmap <leader>wg :VimwikiGoto<space>
