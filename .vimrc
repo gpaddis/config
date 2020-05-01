@@ -199,8 +199,8 @@ let g:vimwiki_list = [default_wiki]
 " let personal_wiki = {'path': '~/personal_wiki/'}
 " let g:vimwiki_list = add(g:vimwiki_list, personal_wiki)
 "
-" Then select the one you want with <leader>ws. or go to the second like
-" 2<leader>ww.
+" Then select the one you want with <leader>ws
+" or go to the second like 2<leader>ww
 "
 " glob: see https://vi.stackexchange.com/a/11572
 if glob('~/.vim/local_wikis.vim')!=#""
