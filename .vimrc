@@ -34,7 +34,8 @@ let g:goyo_width = 200
 let g:vim_markdown_folding_disabled = 1
 set conceallevel=2
 
-" Set the indentline char
+" Indentline options
+let g:indentLine_enabled = 0
 let g:indentLine_char = '▏'
 
 " }}}
