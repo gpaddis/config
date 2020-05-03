@@ -34,6 +34,9 @@ let g:goyo_width = 200
 let g:vim_markdown_folding_disabled = 1
 set conceallevel=2
 
+" Set the indentline char
+let g:indentLine_char = '▏'
+
 " }}}
 " Neovim-specific Settings {{{
 
@@ -257,7 +260,7 @@ let g:ale_fixers = {
 \}
 
 " Set this variable to 1 to fix files when you save them.
-let g:ale_fix_on_save = 1
+let g:ale_fix_on_save = 0
 
 " }}}
 " UltiSnips {{{
