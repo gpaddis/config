@@ -59,6 +59,7 @@ set expandtab
 set linebreak
 set wildmenu
 set backspace=indent,eol,start
+set list listchars=tab:\ \ ,trail:·
 
 set foldcolumn=2                    "Set foldcolumn to make some space.
 hi foldcolumn ctermbg=bg
@@ -122,6 +123,10 @@ inoremap [ []<left>
 inoremap { {}<left>
 inoremap {<CR> {<CR>}<ESC>O
 inoremap {;<CR> {<CR>};<ESC>O
+
+" bold and italics
+inoremap <C-b> **<left>
+inoremap <C-v> __<left>
 
 " Toogle paste mode
 nmap <leader>pa :set invpaste<cr>
@@ -225,7 +230,7 @@ inoremap <C-Space> - [ ]<space>
 " CtrlP {{{
 
 let g:ctrlp_custom_ignore = {
-    \ 'dir':  '\.git$\|\.hg$\|\.svn$\|bower_components$\|dist$\|node_modules$\|project_files$\|test$',
+    \ 'dir':  '\.git$\|\.hg$\|\.svn$\|bower_components$\|dist$\|node_modules$\|vendor\/cache$\|project_files$\|test$',
     \ 'file': '\.exe$\|\.so$\|\.dll$\|\.pyc$|\.pdf$|\.DS_STORE$' }
 let g:ctrlp_match_window = 'top,order:ttb,min:1,max:30,results:25'
 let g:ctrlp_switch_buffer=0
