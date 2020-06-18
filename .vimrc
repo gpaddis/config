@@ -201,9 +201,7 @@ nmap <C-H> <C-W><C-H>
 " }}}
 " VimWiki {{{
 
-let default_wiki = {'path': '~/vimwiki/',
-                  \ 'path_html': '~/vimwiki/html',
-                  \ 'auto_export': 1}
+let default_wiki = {'path': '~/vimwiki/'}
 
 let g:vimwiki_list = [default_wiki]
 
@@ -230,7 +228,7 @@ inoremap <C-Space> - [ ]<space>
 " CtrlP {{{
 
 let g:ctrlp_custom_ignore = {
-    \ 'dir':  '\.git$\|\.hg$\|\.svn$\|bower_components$\|dist$\|node_modules$\|public$\|vendor$\|project_files$\|test$',
+    \ 'dir':  '\.git$\|\.hg$\|\.svn$\|bower_components$\|dist$\|node_modules$\|public$\|vendor$\|project_files$',
     \ 'file': '\.exe$\|\.so$\|\.dll$\|\.pyc$|\.pdf$|\.DS_STORE$' }
 let g:ctrlp_match_window = 'top,order:ttb,min:1,max:30,results:25'
 let g:ctrlp_switch_buffer=0
