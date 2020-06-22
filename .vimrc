@@ -135,7 +135,7 @@ nmap <leader>pa :set invpaste<cr>
 " {{{ Macros
 
 " Make a markdown (link)[]
-let @k="bi(lxea)[a"
+let @k="bi[lxea](a"
 
 " }}}
 " PHP {{{
