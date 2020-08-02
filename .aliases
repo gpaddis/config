@@ -50,6 +50,7 @@ alias php56="/opt/php-5.6.30/bin/php"
 alias createtags='ctags -R --PHP-kinds=cfi --regex-php="/^[ \t]*trait[ \t]+([a-z0_9_]+)/\1/t,traits/i"'
 
 # Ruby / Rails
+alias rails="DISABLE_SPRING=1 bin/rails"
 alias be="bundle exec"
 alias rt="rails test"
 alias serve="bundle exec rails s"
