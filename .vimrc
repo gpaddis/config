@@ -81,6 +81,10 @@ set smartcase  " Don't ignore case, when I search for uppercase patterns.
 " Remove highlightning
 noremap <space> :nohlsearch<cr>
 
+" Replace text in visual selection
+" https://stackoverflow.com/a/676619
+vnoremap <C-r> "hy:%s/<C-r>h//gc<left><left><left>
+
 " Turn off highlighting automatically when I don't move the cursor for a
 " while, then on again when I move it.
 autocmd cursorhold * set nohlsearch
