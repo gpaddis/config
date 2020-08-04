@@ -38,6 +38,9 @@ set conceallevel=2
 let g:indentLine_enabled = 0
 let g:indentLine_char = '▏'
 
+" Default was 4 seconds, this gives a quicker response for vim-gitgutter
+set updatetime=1000
+
 " }}}
 " Neovim & Macvim-specific Settings {{{
 
