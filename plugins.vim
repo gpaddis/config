@@ -44,6 +44,7 @@ Plugin 'tpope/vim-endwise'
 Plugin 'sonph/onehalf', {'rtp': 'vim/'}
 Plugin 'drewtempelmeyer/palenight.vim'
 Plugin 'joshdick/onedark.vim'
+Plugin 'rakr/vim-one'
 
 " NOTES
 " YouCompleteMe: read the instructions

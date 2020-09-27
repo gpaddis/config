@@ -17,11 +17,12 @@ so ~/.vim/plugins.vim               "Source the plugins file
 
 syntax on
 
-set background=dark
+let g:airline_theme='one'
+set background=light
 set t_Co=256
 
 let g:monokai_term_italic = 1
-colorscheme onedark
+colorscheme one
 filetype indent plugin on
 
 set laststatus=2    " Always show the status line.
