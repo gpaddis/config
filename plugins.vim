@@ -39,6 +39,7 @@ Plugin 'chazy/dirsettings' " Set specific settings per directory
 Plugin 'vim-ruby/vim-ruby'
 Plugin 'tpope/vim-rails'
 Plugin 'tpope/vim-endwise'
+Plugin 'thoughtbot/vim-rspec'
 
 " Themes
 Plugin 'sonph/onehalf', {'rtp': 'vim/'}

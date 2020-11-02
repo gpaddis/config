@@ -181,12 +181,13 @@ nmap <leader>py :! python %<cr>
 " Execute Ruby files
 nmap <leader>rb :! clear && ruby %<cr>
 
-" Rails: run tests
-nmap <leader>rt :! clear && rails test<cr>
+" RSpec.vim mappings
+map <Leader>rt :call RunCurrentSpecFile()<CR>
+map <Leader>rl :call RunNearestSpec()<CR>
+map <Leader>ry :call RunLastSpec()<CR>
+map <Leader>ra :call RunAllSpecs()<CR>
 
-" Rspec: run tests
-nmap <leader>rs :! clear && bundle exec rspec<cr>
-
+let g:rspec_command = "!bundle exec rspec 2>/dev/null {spec}"
 
 " }}}
 " Split Management {{{
