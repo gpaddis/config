@@ -25,6 +25,7 @@ Plugin 'mattn/calendar-vim'
 Plugin 'tpope/vim-surround' " Easily surround a word with quotes etc.
 Plugin 'Yggdroot/indentLine' " Display the indention levels with thin vertical lines
 Plugin 'airblade/vim-gitgutter' " Shows git diff markers in the sign column and stages/previews/undoes hunks and partial hunks
+Plugin 'dyng/ctrlsf.vim' " Pretty search in current project directory or wiki
 
 " Markdown: check out https://github.com/plasticboy/vim-markdown
 Plugin 'godlygeek/tabular'

@@ -212,6 +212,7 @@ nmap <C-H> <C-W><C-H>
 let default_wiki = {'path': '~/vimwiki/'}
 
 let g:vimwiki_list = [default_wiki]
+let g:vimwiki_auto_chdir = 1
 
 " Add other local wikis in local_wikis.vim like this:
 "
@@ -231,6 +232,19 @@ nmap <leader>wg :VimwikiGoto<space>
 
 " Add an empty checkbox in insert mode
 inoremap <C-Space> - [ ]<space>
+
+" }}}
+" CtrlSF {{{
+
+" https://github.com/dyng/ctrlsf.vim
+nmap     <C-F>f <Plug>CtrlSFPrompt
+vmap     <C-F>f <Plug>CtrlSFVwordPath
+vmap     <C-F>F <Plug>CtrlSFVwordExec
+nmap     <C-F>n <Plug>CtrlSFCwordPath
+nmap     <C-F>p <Plug>CtrlSFPwordPath
+nnoremap <C-F>o :CtrlSFOpen<CR>
+nnoremap <C-F>t :CtrlSFToggle<CR>
+inoremap <C-F>t <Esc>:CtrlSFToggle<CR>
 
 " }}}
 " CtrlP {{{
