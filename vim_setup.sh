@@ -6,7 +6,6 @@ VIMDIR="$HOME/.vim"
 
 source bash_functions.sh
 
-makeSymLink $PWD/.vimrc $HOME/.vimrc
 makeSymLink $PWD/plugins.vim $VIMDIR/plugins.vim
 makeSymLink $PWD/.aliases $HOME/.aliases
 
@@ -34,3 +33,6 @@ vim +PluginInstall +qall
 
 # Reminders
 [ -d $VIMDIR/bundle/YouCompleteMe ] && printGreen "YouCompleteMe is installed: run install.py in the plugin directory if you haven't already (check the docs: https://github.com/ycm-core/YouCompleteMe)."
+
+# Symlink .vimrc at the end to avoid missing plugin errors.
+makeSymLink $PWD/.vimrc $HOME/.vimrc
