@@ -27,6 +27,7 @@ Plugin 'ctrlpvim/ctrlp.vim'
 Plugin 'dyng/ctrlsf.vim' " Pretty search in current project directory or wiki
 Plugin 'scrooloose/nerdtree'
 Plugin 'joshdick/onedark.vim'
+Plugin 'ayu-theme/ayu-vim'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -39,9 +40,9 @@ syntax on
 
 filetype indent plugin on
 
-set background=dark
-set t_Co=256
-colorscheme onedark
+set termguicolors
+let ayucolor="mirage"
+colorscheme ayu
 
 set number
 
