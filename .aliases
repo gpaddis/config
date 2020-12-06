@@ -2,6 +2,7 @@
 
 # Terminal
 alias vi="nvim"
+alias v="nvim -u ~/.vimrc-light"
 alias cls="clear"
 alias diff="colordiff"
 alias update="sudo apt-get update && sudo apt-get upgrade -y"
