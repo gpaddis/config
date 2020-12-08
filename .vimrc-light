@@ -23,11 +23,15 @@ call vundle#begin()
 Plugin 'VundleVim/Vundle.vim'
 Plugin 'vimwiki/vimwiki'
 Plugin 'plasticboy/vim-markdown'
+Plugin 'dense-analysis/ale'
+Plugin 'mattn/calendar-vim'
+Plugin 'airblade/vim-gitgutter' " Shows git diff markers in the sign column and stages/previews/undoes hunks and partial hunks
 Plugin 'ctrlpvim/ctrlp.vim'
 Plugin 'dyng/ctrlsf.vim' " Pretty search in current project directory or wiki
 Plugin 'scrooloose/nerdtree'
 Plugin 'joshdick/onedark.vim'
 Plugin 'ayu-theme/ayu-vim'
+Plugin 'tpope/vim-rails'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -182,13 +186,31 @@ nmap <leader>sh :w<cr>:! bash %<cr>
 " Python {{{
 
 " Execute python files
-nmap <leader>py :! python %<cr>
+nmap <leader>py :! python3 %<cr>
+nmap <leader>pt :! py.test<cr>
 
 " }}}
 " Ruby {{{
 
 " Execute Ruby files
 nmap <leader>rb :! clear && ruby %<cr>
+
+" }}}
+" ALE {{{
+
+" Autofix errors
+noremap <leader>f :ALEFix<cr>
+
+" https://github.com/dense-analysis/ale#2ii-fixing
+let g:ale_fixers = {
+\   '*': ['remove_trailing_lines', 'trim_whitespace'],
+\   'ruby': ['rubocop'],
+\   'php': ['php_cs_fixer'],
+\   'python': ['autopep8'],
+\}
+
+" Set this variable to 1 to fix files when you save them.
+let g:ale_fix_on_save = 0
 
 " }}}
 " Split Management {{{
