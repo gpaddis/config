@@ -2,7 +2,7 @@
 
 # Terminal
 alias vi="nvim"
-alias v="nvim -u ~/.vimrc-light"
+alias v="nvim"
 alias cls="clear"
 alias diff="colordiff"
 alias update="sudo apt-get update && sudo apt-get upgrade -y"
@@ -110,4 +110,9 @@ function backup {
 # Cleanup unused docker images.
 function dockerCleanupDanglingImages {
     docker rmi $(docker images -a --filter=dangling=true -q)
+}
+
+# Open a zoom conference
+function zoom {
+    open "zoommtg://zoom.us/join?confno=$1&pwd=$2"
 }

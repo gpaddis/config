@@ -1,5 +1,4 @@
 set nocompatible                    "be iMproved, required
-so ~/.vim/plugins.vim               "Source the plugins file
 
 " Documentation {{{
 
@@ -13,21 +12,46 @@ so ~/.vim/plugins.vim               "Source the plugins file
 "   * https://github.com/rosetree/tildeslash/blob/master/.vimrc
 
 " }}}
+" Plugins {{{
+"
+filetype off                  " required
+
+" set the runtime path to include Vundle and initialize
+set rtp+=~/.vim/bundle/Vundle.vim
+call vundle#begin()
+
+Plugin 'VundleVim/Vundle.vim'
+Plugin 'vimwiki/vimwiki'
+Plugin 'plasticboy/vim-markdown'
+Plugin 'dense-analysis/ale'
+Plugin 'mattn/calendar-vim'
+Plugin 'airblade/vim-gitgutter' " Shows git diff markers in the sign column and stages/previews/undoes hunks and partial hunks
+Plugin 'ctrlpvim/ctrlp.vim'
+Plugin 'dyng/ctrlsf.vim' " Pretty search in current project directory or wiki
+Plugin 'scrooloose/nerdtree'
+Plugin 'joshdick/onedark.vim'
+Plugin 'ayu-theme/ayu-vim'
+Plugin 'tpope/vim-rails'
+Plugin 'vim-ruby/vim-ruby'
+
+" All of your Plugins must be added before the following line
+call vundle#end()            " required
+filetype plugin indent on    " required
+
+" }}}
 " Visual Settings {{{
 
 syntax on
 
-set background=dark
-set t_Co=256
-
-let g:monokai_term_italic = 1
-colorscheme onedark
 filetype indent plugin on
 
-set laststatus=2    " Always show the status line.
+set termguicolors
+let ayucolor="mirage"
+colorscheme ayu
 
-" Goyo settings: https://github.com/junegunn/goyo.vim
-let g:goyo_width = 200
+set number
+
+set laststatus=2    " Always show the status line.
 
 " Markdown syntax
 " https://github.com/plasticboy/vim-markdown
@@ -64,14 +88,6 @@ set wildmenu
 set backspace=indent,eol,start
 set list listchars=tab:\ \ ,trail:·
 
-set foldcolumn=2                    "Set foldcolumn to make some space.
-hi foldcolumn ctermbg=bg
-
-" make YCM compatible with UltiSnips (using supertab)
-" https://stackoverflow.com/questions/14896327/ultisnips-and-youcompleteme
-let g:ycm_key_list_select_completion = ['<C-j>', '<Down>']
-let g:ycm_key_list_previous_completion = ['<C-k>', '<Up>']
-let g:SuperTabDefaultCompletionType = '<C-n>'
 
 " }}}
 " Searching {{{
@@ -145,17 +161,16 @@ nmap <leader>pa :set invpaste<cr>
 let @k="bi[lxea](a"
 
 " }}}
+" NERDTree {{{
+
+let NERDTreeHijackNetrw = 0         "Avoid conflicts with vinegar.
+let NERDTreeShowHidden = 1          "Show hidden files by default.
+
+nmap <C-B> :NERDTreeToggle<cr>
+nmap <leader>r :NERDTreeFind<cr>
+
+" }}}
 " PHP {{{
-
-" php-cs-fixer
-let g:php_cs_fixer_rules = "@PSR2"          " options: --rules (default:@PSR2)
-let g:php_cs_fixer_php_path = "php"               " Path to PHP
-let g:php_cs_fixer_dry_run = 0                    " Call command with dry-run option
-let g:php_cs_fixer_verbose = 0                    " Return the output of command if 1, else an inline information.
-
-" Map the fixer commands
-nnoremap <silent><leader>pcd :call PhpCsFixerFixDirectory()<CR>
-nnoremap <silent><leader>pcf :call PhpCsFixerFixFile()<CR>
 
 " Execute PHP files
 nmap <leader>ph :w<cr>:! php %<cr>
@@ -173,7 +188,8 @@ nmap <leader>sh :w<cr>:! bash %<cr>
 " Python {{{
 
 " Execute python files
-nmap <leader>py :! python %<cr>
+nmap <leader>py :! python3 %<cr>
+nmap <leader>pt :! py.test<cr>
 
 " }}}
 " Ruby {{{
@@ -181,13 +197,25 @@ nmap <leader>py :! python %<cr>
 " Execute Ruby files
 nmap <leader>rb :! clear && ruby %<cr>
 
-" RSpec.vim mappings
-map <Leader>rt :call RunCurrentSpecFile()<CR>
-map <Leader>rl :call RunNearestSpec()<CR>
-map <Leader>ry :call RunLastSpec()<CR>
-map <Leader>ra :call RunAllSpecs()<CR>
+" Set the ruby syntax in rbs files
+autocmd BufNewFile,BufRead *.rbs set syntax=ruby
 
-let g:rspec_command = "!bundle exec rspec 2>/dev/null {spec}"
+" }}}
+" ALE {{{
+
+" Autofix errors
+noremap <leader>f :ALEFix<cr>
+
+" https://github.com/dense-analysis/ale#2ii-fixing
+let g:ale_fixers = {
+\   '*': ['remove_trailing_lines', 'trim_whitespace'],
+\   'ruby': ['rubocop'],
+\   'php': ['php_cs_fixer'],
+\   'python': ['black'],
+\}
+
+" Set this variable to 1 to fix files when you save them.
+let g:ale_fix_on_save = 1
 
 " }}}
 " Split Management {{{
@@ -267,53 +295,6 @@ nmap <C-E> :tag<space>
 
 " Ignore these files and folders when calling CtrlP
 set wildignore+=*/tmp/*,*.so,*.swp,*.zip,*/.git/*
-
-" }}}
-" NERDTree {{{
-
-let NERDTreeHijackNetrw = 0         "Avoid conflicts with vinegar.
-let NERDTreeShowHidden = 1          "Show hidden files by default.
-
-nmap <C-B> :NERDTreeToggle<cr>
-
-" }}}
-" ALE {{{
-
-" Autofix errors
-noremap <leader>f :ALEFix<cr>
-
-" https://github.com/dense-analysis/ale#2ii-fixing
-let g:ale_fixers = {
-\   '*': ['remove_trailing_lines', 'trim_whitespace'],
-\   'ruby': ['rubocop'],
-\   'php': ['php_cs_fixer'],
-\}
-
-" Set this variable to 1 to fix files when you save them.
-let g:ale_fix_on_save = 0
-
-" }}}
-" UltiSnips {{{
-
-" Edit the snippets
-nmap <leader>es :UltiSnipsEdit<cr>
-
-" If you want :UltiSnipsEdit to split your window.
-let g:UltiSnipsEditSplit="vertical"
-
-" Trigger configuration. Do not use <tab> if you use https://github.com/Valloric/YouCompleteMe.
-let g:UltiSnipsExpandTrigger="<tab>"
-let g:UltiSnipsJumpForwardTrigger="<tab>"
-let g:UltiSnipsJumpBackwardTrigger="<S-tab>"
-
-" Set the snippets directory.
-let g:UltiSnipsSnippetsDir = "~/.vim/UltiSnips"
-
-" }}}
-" PHP Documentor {{{
-
-let g:pdv_template_dir = $HOME ."/.vim/bundle/pdv/templates_snip"
-nnoremap <leader>d :call pdv#DocumentWithSnip()<cr>
 
 " }}}
 " Backups {{{
