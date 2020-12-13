@@ -45,6 +45,14 @@ syntax on
 
 filetype indent plugin on
 
+" https://vi.stackexchange.com/a/20284
+if &term =~# '256color' && ( &term =~# '^screen' || &term =~# '^tmux' )
+    let &t_8f = "\<Esc>[38;2;%lu;%lu;%lum"
+    let &t_8b = "\<Esc>[48;2;%lu;%lu;%lum"
+endif
+
+set background=dark
+set t_Co=256
 set termguicolors
 let ayucolor="mirage"
 colorscheme ayu
