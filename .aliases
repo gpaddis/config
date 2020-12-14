@@ -117,3 +117,9 @@ function dockerCleanupDanglingImages {
 function zoom {
     open "zoommtg://zoom.us/join?confno=$1&pwd=$2"
 }
+
+# Generate a random secure password.
+# https://unix.stackexchange.com/a/230676
+function genpass {
+    LC_ALL=C tr -dc 'A-Za-z0-9!"#$%&'\''()*+,-./:;<=>?@[\]^_`{|}~' </dev/urandom | head -c ${1:-32} ; echo
+}
