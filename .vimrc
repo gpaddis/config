@@ -29,10 +29,12 @@ Plugin 'airblade/vim-gitgutter' " Shows git diff markers in the sign column and 
 Plugin 'ctrlpvim/ctrlp.vim'
 Plugin 'dyng/ctrlsf.vim' " Pretty search in current project directory or wiki
 Plugin 'scrooloose/nerdtree'
+Plugin 'iamcco/markdown-preview.nvim'
 Plugin 'joshdick/onedark.vim'
 Plugin 'ayu-theme/ayu-vim'
 Plugin 'tpope/vim-rails'
 Plugin 'vim-ruby/vim-ruby'
+Plugin 'thoughtbot/vim-rspec'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -69,6 +71,10 @@ set conceallevel=2
 " Indentline options
 let g:indentLine_enabled = 0
 let g:indentLine_char = '▏'
+
+let g:mkdp_auto_start = 0
+let g:mkdp_auto_close = 1
+let g:mkdp_filetypes = ['markdown', 'vimwiki']
 
 " Default was 4 seconds, this gives a quicker response for vim-gitgutter
 set updatetime=1000
@@ -175,7 +181,7 @@ let NERDTreeHijackNetrw = 0         "Avoid conflicts with vinegar.
 let NERDTreeShowHidden = 1          "Show hidden files by default.
 
 nmap <C-B> :NERDTreeToggle<cr>
-nmap <leader>r :NERDTreeFind<cr>
+nmap <leader>f :NERDTreeFind<cr>
 
 " }}}
 " PHP {{{
@@ -208,11 +214,19 @@ nmap <leader>rb :! clear && ruby %<cr>
 " Set the ruby syntax in rbs files
 autocmd BufNewFile,BufRead *.rbs set syntax=ruby
 
+" RSpec.vim mappings
+map <Leader>rt :call RunCurrentSpecFile()<CR>
+map <Leader>rl :call RunNearestSpec()<CR>
+map <Leader>ry :call RunLastSpec()<CR>
+map <Leader>ra :call RunAllSpecs()<CR>
+
+let g:rspec_command = "!bundle exec rspec 2>/dev/null {spec}"
+
 " }}}
 " ALE {{{
 
 " Autofix errors
-noremap <leader>f :ALEFix<cr>
+"noremap <leader>f :ALEFix<cr>
 
 " https://github.com/dense-analysis/ale#2ii-fixing
 let g:ale_fixers = {
