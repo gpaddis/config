@@ -116,7 +116,7 @@ noremap <space> :nohlsearch<cr>
 
 " Replace text in visual selection
 " https://stackoverflow.com/a/676619
-vnoremap <C-r> "hy:%s/<C-r>h//gc<left><left><left>
+vnoremap <C-r> "hy:%s/<C-r>h/<C-r>h/gc<left><left><left>
 
 " Turn off highlighting automatically when I don't move the cursor for a
 " while, then on again when I move it.

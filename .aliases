@@ -109,9 +109,9 @@ function backup {
 }
 
 # Cleanup unused docker images.
-function dockerCleanupDanglingImages {
-    docker rmi $(docker images -a --filter=dangling=true -q)
-}
+#function dockerCleanupDanglingImages {
+#    docker rmi $(docker images -a --filter=dangling=true -q)
+#}
 
 # Open a zoom conference
 function zoom {
