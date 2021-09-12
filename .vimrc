@@ -263,6 +263,7 @@ let default_wiki = {'path': '~/vimwiki/'}
 
 let g:vimwiki_list = [default_wiki]
 let g:vimwiki_auto_chdir = 1
+let g:vimwiki_markdown_link_ext = 1 " See https://github.com/vimwiki/vimwiki/pull/529/files
 
 " Add other local wikis in local_wikis.vim like this:
 "
