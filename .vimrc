@@ -34,6 +34,7 @@ Plugin 'joshdick/onedark.vim'
 Plugin 'ayu-theme/ayu-vim'
 Plugin 'tpope/vim-rails'
 Plugin 'vim-ruby/vim-ruby'
+Plugin 'rust-lang/rust.vim'
 Plugin 'thoughtbot/vim-rspec'
 
 " All of your Plugins must be added before the following line
@@ -110,6 +111,10 @@ set hlsearch
 set incsearch
 set ignorecase " Ignore case, when I search for lowercase patterns.
 set smartcase  " Don't ignore case, when I search for uppercase patterns.
+
+" Wrap on 80 chars
+set textwidth=80
+set colorcolumn=+1
 
 " Remove highlightning
 noremap <space> :nohlsearch<cr>
