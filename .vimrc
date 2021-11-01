@@ -156,6 +156,9 @@ nmap <leader>q :q<cr>
 " Unfold with +
 nmap + za
 
+" Open the current file in Gitlab
+nmap <leader>gl :!open-in-gitlab.sh %<cr>
+
 " Autocomplete brackets
 " https://stackoverflow.com/questions/21316727/automatic-closing-brackets-for-vim
 inoremap " ""<left>
@@ -196,6 +199,15 @@ nmap <leader>ph :w<cr>:! php %<cr>
 
 " Test the current file with phpunit
 nmap <leader>t :w<cr>:! phpunit6 --color=auto %<cr>
+
+" }}}
+" Rust {{{
+
+" Autoformat rust code on save
+let g:rustfmt_autosave = 1
+
+" Run a Rust script
+nmap <leader>rs :RustRun<cr>
 
 " }}}
 " Bash {{{
