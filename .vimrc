@@ -164,6 +164,7 @@ nmap <leader>gl :!open-in-gitlab.sh %<cr>
 inoremap " ""<left>
 inoremap ' ''<left>
 inoremap ( ()<left>
+inoremap (; ();<left><left>
 inoremap [ []<left>
 inoremap { {}<left>
 inoremap {<CR> {<CR>}<ESC>O
