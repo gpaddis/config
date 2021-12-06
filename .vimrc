@@ -61,6 +61,7 @@ let ayucolor="mirage"
 colorscheme ayu
 
 set number
+set relativenumber
 
 set laststatus=2    " Always show the status line.
 
@@ -113,7 +114,7 @@ set ignorecase " Ignore case, when I search for lowercase patterns.
 set smartcase  " Don't ignore case, when I search for uppercase patterns.
 
 " Wrap on 80 chars
-set textwidth=80
+set textwidth=100
 set colorcolumn=+1
 
 " Remove highlightning
@@ -239,7 +240,7 @@ map <Leader>rl :call RunNearestSpec()<CR>
 map <Leader>ry :call RunLastSpec()<CR>
 map <Leader>ra :call RunAllSpecs()<CR>
 
-let g:rspec_command = "!bundle exec rspec 2>/dev/null {spec}"
+let g:rspec_command = "!bundle exec rspec {spec}"
 
 " }}}
 " ALE {{{
