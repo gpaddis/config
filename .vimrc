@@ -114,7 +114,7 @@ set ignorecase " Ignore case, when I search for lowercase patterns.
 set smartcase  " Don't ignore case, when I search for uppercase patterns.
 
 " Wrap on 80 chars
-set textwidth=100
+"set textwidth=100
 set colorcolumn=+1
 
 " Remove highlightning
@@ -178,6 +178,9 @@ inoremap <C-v> __<left>
 
 " Toogle paste mode
 nmap <leader>pa :set invpaste<cr>
+
+" Calculate the result of an expression
+ino <C-A> <C-O>yiW<End>=<C-R>=<C-R>0<CR>
 
 " }}}
 " {{{ Macros
