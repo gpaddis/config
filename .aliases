@@ -123,3 +123,13 @@ function zoom {
 function genpass {
     LC_ALL=C tr -dc 'A-Za-z0-9!"#$%&'\''()*+,-./:;<=>?@[\]^_`{|}~' </dev/urandom | head -c ${1:-32} ; echo
 }
+
+# Rubocop on modified files.
+function rubochanged() {
+    gst -s | awk '{print $2}' | grep '\.rb$' | xargs bundle exec rubocop
+}
+
+# Rubocop on modified ruby files, then commit amend all files and push force with lease.
+function ruboamendpushforce() {
+   rubochanged && gaa && gcn! && gpf
+}

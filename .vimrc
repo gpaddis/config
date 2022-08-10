@@ -30,7 +30,6 @@ Plugin 'ctrlpvim/ctrlp.vim'
 Plugin 'dyng/ctrlsf.vim' " Pretty search in current project directory or wiki
 Plugin 'scrooloose/nerdtree'
 Plugin 'iamcco/markdown-preview.nvim'
-Plugin 'joshdick/onedark.vim'
 Plugin 'ayu-theme/ayu-vim'
 Plugin 'tpope/vim-rails'
 Plugin 'vim-ruby/vim-ruby'
@@ -113,8 +112,8 @@ set incsearch
 set ignorecase " Ignore case, when I search for lowercase patterns.
 set smartcase  " Don't ignore case, when I search for uppercase patterns.
 
-" Wrap on 80 chars
-"set textwidth=100
+" Wrap on 80 / x chars
+" set textwidth=100
 set colorcolumn=+1
 
 " Remove highlightning
