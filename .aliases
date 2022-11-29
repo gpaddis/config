@@ -29,6 +29,8 @@ alias mux="tmuxinator"
 alias nah="git reset --hard;git clean -df;"
 alias gs="gst" # Stop running ghostscript by accident!
 alias grubopush="rubocop && git push" # Do a rubocop check before pushing
+alias wtl="git worktree list"
+alias wtr="git worktree remove"
 
 # Django Dev
 alias dsource="source env/bin/activate"
