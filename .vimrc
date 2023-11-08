@@ -30,7 +30,7 @@ Plugin 'ctrlpvim/ctrlp.vim'
 Plugin 'dyng/ctrlsf.vim' " Pretty search in current project directory or wiki
 Plugin 'scrooloose/nerdtree'
 Plugin 'iamcco/markdown-preview.nvim'
-Plugin 'ayu-theme/ayu-vim'
+Plugin 'Luxed/ayu-vim'
 Plugin 'tpope/vim-rails'
 Plugin 'vim-ruby/vim-ruby'
 Plugin 'rust-lang/rust.vim'

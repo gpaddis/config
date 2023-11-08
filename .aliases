@@ -128,12 +128,12 @@ function genpass {
 
 # Rubocop on modified files.
 function rubochanged() {
-    gst -s | awk '{print $2}' | grep '\.rb$' | xargs bundle exec rubocop "$@"
+    gst -s | awk '{print $2}' | grep '\.rb$' | xargs bundle-exec.sh rubocop "$@"
 }
 
 # rspec on modified files.
 function rspecchanged() {
-    gst -s | awk '{print $2}' | grep 'spec\/' | xargs bundle exec rspec "$@"
+    gst -s | awk '{print $2}' | grep 'spec\/' | xargs bundle-exec.sh rspec "$@"
 }
 
 # Rubocop on modified ruby files, then commit amend all files and push force with lease.
