@@ -67,3 +67,8 @@ appendStringToFile() {
         echo "$string" >> "$filename"
     fi
 }
+
+# Fuzzy-search git branches
+gch() {
+ git checkout "$(git branch --all | fzf | tr -d '[:space:]')"
+}
