@@ -25,5 +25,9 @@ printGreen "Installation complete."
 
 # Save the SSH passphrase in the Keychain.
 grep 'UseKeychain yes' $HOME/.ssh/config || {
-    echo -e "Host *\n    UseKeychain yes\n    AddKeysToAgent yes\n    IdentityFile ~/.ssh/id_rsa" >> $HOME/.ssh/config
+    echo -e "Host *\n    UseKeychain yes\n    AddKeysToAgent yes\n    IdentityFile ~/.ssh/id_ed25519" >> $HOME/.ssh/config
 }
+
+# Install plugins
+git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
+git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
