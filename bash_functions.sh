@@ -59,6 +59,12 @@ fileNotFound() {
     [ ! -f $_file ]
 }
 
+# Return 1 if it can't find a directory.
+dirNotFound() {
+    local _file="$1"
+    [ ! -d $directory ]
+}
+
 # Append a string to a file, skip if the string already exists.
 appendStringToFile() {
     local string="$1"
