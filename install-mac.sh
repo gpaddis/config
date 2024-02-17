@@ -31,3 +31,12 @@ grep 'UseKeychain yes' $HOME/.ssh/config || {
 # Install plugins
 git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
 git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
+
+# Configure neovim
+ln -s .vimrc ~/.vimrc
+mkdir -p  ~/.config/nvim/
+cat <<EOT >> ~/.config/nvim/init.vim
+set runtimepath^=~/.vim runtimepath+=~/.vim/after
+let &packpath=&runtimepath
+source ~/.vimrc
+EOT
