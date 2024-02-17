@@ -8,10 +8,12 @@ installIfMissing() {
 }
 
 commandNotFound brew && /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+commandNotFound zsh && sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 
 installIfMissing fd
 installIfMissing jq
 installIfMissing zim
+installIfMissing nvim
 installIfMissing tmux
 installIfMissing ncdu
 installIfMissing openvpn
@@ -30,10 +32,13 @@ grep -q 'UseKeychain yes' $HOME/.ssh/config || {
 dirNotFound ~/.vim/bundle/Vundle.vim && git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
 dirNotFound ~/.tmux/plugins/tpm && git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
 
+fileNotFound $HOME/.aliases && ln -s .aliases $HOME/.aliases
+grep -q '.aliases' $HOME/.zshrc || echo "source .aliases" >> $HOME/.zshrc
+
 # Configure neovim
-fileNotFound ~/.vimrc && ln -s .vimrc ~/.vimrc
-mkdir -p  ~/.config/nvim/
-fileNotFound ~/.config/nvim/init.vim && cat <<EOT > ~/.config/nvim/init.vim
+fileNotFound $HOME/.vimrc && ln -s .vimrc $HOME/.vimrc
+mkdir -p  $HOME/.config/nvim/
+fileNotFound $HOME/.config/nvim/init.vim && cat <<EOT > $HOME/.config/nvim/init.vim
 set runtimepath^=~/.vim runtimepath+=~/.vim/after
 let &packpath=&runtimepath
 source ~/.vimrc
