@@ -16,6 +16,7 @@ alias grepi="grep -i"
 alias fd="fd -L"
 alias f="cht.sh"
 alias cleanformatting='sed -r "s/\x1B\[([0-9]{1,2}(;[0-9]{1,2})?)?[mGK]//g"'
+alias youtube-dl="yt-dlp"
 
 # Tmux
 alias t="tmux"
@@ -114,6 +115,10 @@ function backup {
 #function dockerCleanupDanglingImages {
 #    docker rmi $(docker images -a --filter=dangling=true -q)
 #}
+
+function docker-cleanup {
+    docker-compose down --volumes && docker system prune && docker volume rm $(docker volume ls -q)
+}
 
 # Open a zoom conference
 function zoom {
