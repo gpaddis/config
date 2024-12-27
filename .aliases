@@ -112,17 +112,10 @@ function backup {
 }
 
 # Cleanup unused docker images.
-#function dockerCleanupDanglingImages {
-#    docker rmi $(docker images -a --filter=dangling=true -q)
-#}
 
+# Stop and remove all containers and volumes.
 function docker-cleanup {
     docker-compose down --volumes && docker system prune && docker volume rm $(docker volume ls -q)
-}
-
-# Open a zoom conference
-function zoom {
-    open "zoommtg://zoom.us/join?confno=$1&pwd=$2"
 }
 
 # Generate a random secure password.
