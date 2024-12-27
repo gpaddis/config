@@ -145,3 +145,8 @@ function rspecchanged() {
 function ruborspecamendpushforce() {
    rubochanged && rspecchanged && gaa && gcn! && gpf
 }
+
+# Spawn a shell in the selected docker container.
+function docker-shell {
+    docker exec -it $(docker ps --format '{{.Names}}' | fzf) sh
+}
