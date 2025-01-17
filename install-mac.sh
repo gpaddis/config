@@ -18,6 +18,7 @@ installIfMissing tmux
 installIfMissing ncdu
 installIfMissing openvpn
 installIfMissing goaccess
+installIfMissing redis
 
 commandNotFound http && brew install httpie
 commandNotFound fzf && brew install fzf && $(brew --prefix)/opt/fzf/install
