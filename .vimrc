@@ -224,8 +224,12 @@ nmap <leader>sh :w<cr>:! bash %<cr>
 " Python {{{
 
 " Execute python files
-nmap <leader>py :! python3 %<cr>
+nmap <leader>py :! pipenv run python %<cr>
 nmap <leader>pt :! py.test<cr>
+
+let g:ale_fixers = {
+\   'python': ['black'],
+\}
 
 " }}}
 " Ruby {{{
@@ -248,7 +252,7 @@ let g:rspec_command = "!bundle exec rspec {spec}"
 " ALE {{{
 
 " Autofix errors
-"noremap <leader>f :ALEFix<cr>
+noremap <leader>af :ALEFix<cr>
 
 " https://github.com/dense-analysis/ale#2ii-fixing
 let g:ale_fixers = {
