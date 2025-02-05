@@ -19,6 +19,7 @@ installIfMissing ncdu
 installIfMissing openvpn
 installIfMissing goaccess
 installIfMissing redis
+installIfMissing git-absorb
 
 commandNotFound http && brew install httpie
 commandNotFound fzf && brew install fzf && $(brew --prefix)/opt/fzf/install
