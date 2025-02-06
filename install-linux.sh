@@ -20,10 +20,28 @@ sudo apt update && sudo apt upgrade -y
 sudo apt remove -y vim-tiny
 
 # Basic packages
-sudo apt install -y curl vim vim-gtk colordiff xclip tree curl zim code zsh keepassxc fonts-powerline build-essential cmake python-dev python3-dev oathtool gnupg2 fdupes gitk sqlitebrowser htop geoip-bin ncdu tmux golang-go jq fzf
+sudo apt install -y curl neovim colordiff xclip tree curl zim code zsh keepassxc fonts-powerline build-essential cmake oathtool gnupg2 fdupes gitk sqlitebrowser htop geoip-bin ncdu tmux golang-go jq fzf
 
 # Optional packages
 sudo apt install -y fd-find
+
+# Get the email address
+echo -n "Enter your email: "
+read EMAIL_ADDRESS
+
+# Configure git
+git config --global user.email $EMAIL_ADDRESS
+git config --global user.name "Gianpiero Addis"
+
+# Generate a SSH keypair
+fileNotFound $HOME/.ssh/id_ed25519 && { ssh-keygen -t ed25519 -C $EMAIL_ADDRESS }
+
+# Save the SSH passphrase in the Keychain.
+# https://docs.github.com/en/authentication/connecting-to-github-with-ssh/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent
+grep -q 'UseKeychain yes' $HOME/.ssh/config || {
+    eval "$(ssh-agent -s)"
+    echo -e "Host *\n    UseKeychain yes\n    AddKeysToAgent yes\n    IdentityFile ~/.ssh/id_ed25519" >> $HOME/.ssh/config
+}
 
 # VS Code
 if commandNotFound code; then
@@ -47,7 +65,7 @@ fi
 # Make zsh the default shell, install oh-my-zsh
 if [ ! $SHELL = '/usr/bin/zsh' ]; then
     chsh -s $(which zsh)
-    sh -c "$(wget https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh -O -)"
+    sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 
     # Set the default user in the .zshrc
     appendStringToFile "# Hide the default user name from the prompt" $ZSHRC
