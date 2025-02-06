@@ -36,11 +36,11 @@ git config --global user.name "Gianpiero Addis"
 # Generate a SSH keypair
 fileNotFound $HOME/.ssh/id_ed25519 && { ssh-keygen -t ed25519 -C $EMAIL_ADDRESS }
 
-# Save the SSH passphrase in the Keychain.
-# https://docs.github.com/en/authentication/connecting-to-github-with-ssh/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent
-grep -q 'UseKeychain yes' $HOME/.ssh/config || {
+# Save the SSH passphrase.
+# https://docs.github.com/en/authentication/connecting-to-github-with-ssh/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent#adding-your-ssh-key-to-the-ssh-agent
+grep -q 'AddKeysToAgent yes' $HOME/.ssh/config || {
     eval "$(ssh-agent -s)"
-    echo -e "Host *\n    UseKeychain yes\n    AddKeysToAgent yes\n    IdentityFile ~/.ssh/id_ed25519" >> $HOME/.ssh/config
+    echo -e "Host *\n    AddKeysToAgent yes\n    IdentityFile ~/.ssh/id_ed25519" >> $HOME/.ssh/config
 }
 
 # VS Code
