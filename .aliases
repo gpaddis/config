@@ -114,9 +114,15 @@ function backup {
 # Commit a fixup and autosquash.
 function fixup {
     COMMIT="$1"
-    git add .
     git commit --fixup $COMMIT
     git rebase -i $COMMIT~ --autosquash
+}
+
+# Commit a fixup and autosquash.
+function fixup-all {
+    COMMIT="$1"
+    git add .
+    fixup $COMMIT
 }
 
 # Cleanup unused docker images.
