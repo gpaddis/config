@@ -111,6 +111,14 @@ function backup {
     ls -la $filename*
 }
 
+# Commit a fixup and autosquash.
+function fixup {
+    COMMIT="$1"
+    git add .
+    git commit --fixup $COMMIT
+    git rebase -i $COMMIT~ --autosquash
+}
+
 # Cleanup unused docker images.
 
 # Stop and remove all containers and volumes.
