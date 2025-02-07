@@ -61,6 +61,7 @@ colorscheme ayu
 
 set number
 set relativenumber
+set scrolloff=10
 
 set laststatus=2    " Always show the status line.
 
