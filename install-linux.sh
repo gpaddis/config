@@ -2,7 +2,7 @@
 # Resources:
 # * https://remysharp.com/2018/08/23/cli-improved
 
-. bash_functions.sh
+source bash_functions.sh
 
 # Get Ubuntu codename - in case something needs to be installed for a specific Ubuntu version
 UBUNTU_CODENAME="$(lsb_release -c | awk '{print $NF}')"
@@ -20,7 +20,7 @@ sudo apt update && sudo apt upgrade -y
 sudo apt remove -y vim-tiny
 
 # Basic packages
-sudo apt install -y curl neovim colordiff xclip tree curl zim code zsh keepassxc fonts-powerline build-essential cmake oathtool gnupg2 fdupes gitk sqlitebrowser htop geoip-bin ncdu tmux golang-go jq fzf
+sudo apt install -y curl neovim colordiff xclip tree curl zim code zsh keepassxc fonts-powerline build-essential cmake oathtool gnupg2 fdupes gitk sqlitebrowser htop geoip-bin ncdu tmux golang-go jq fzf rbenv
 
 # Optional packages
 sudo apt install -y fd-find
