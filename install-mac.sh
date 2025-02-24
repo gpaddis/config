@@ -7,20 +7,10 @@ commandNotFound brew && /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercon
 commandNotFound zsh && sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 commandNotFound fzf && brew install fzf && $(brew --prefix)/opt/fzf/install
 
-brew install coreutils \
-  fd \
-  goaccess \
-  httpie \
-  jq \
-  ncdu \
-  nvim \
-  openvpn \
-  redis \
-  tmux \
-  font-fira-mono \
-  font-fira-code \
-  font-fira-code-nerd-font \
-  font-jetbrains-mono-nerd-font
+DOTFILES=$(cd $(dirname "${BASH_SOURCE[0]}") && pwd
+
+ln -s "$DOTFILES/Brewfile" "$HOME/Brewfile"
+brew bundle
 
 fileNotFound $HOME/.ssh/id_ed25519 && {
   echo -n "Enter your email: "
@@ -40,7 +30,7 @@ grep -q 'UseKeychain yes' $HOME/.ssh/config || {
 #dirNotFound ~/.vim/bundle/Vundle.vim && git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
 dirNotFound ~/.tmux/plugins/tpm && git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
 
-fileNotFound $HOME/.aliases && ln -s .aliases $HOME/.aliases
+fileNotFound $HOME/.aliases && ln -s "$DOTFILES/.aliases" "$HOME/.aliases"
 grep -q '.aliases' $HOME/.zshrc || echo "source .aliases" >>$HOME/.zshrc
 
 # Configure neovim
