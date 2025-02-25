@@ -32,6 +32,8 @@ Plugin 'scrooloose/nerdtree'
 Plugin 'iamcco/markdown-preview.nvim'
 Plugin 'Luxed/ayu-vim'
 Plugin 'tpope/vim-rails'
+Plugin 'psliwka/vim-smoothie'
+Plugin 'jiangmiao/auto-pairs'
 Plugin 'vim-ruby/vim-ruby'
 Plugin 'rust-lang/rust.vim'
 Plugin 'thoughtbot/vim-rspec'
@@ -162,15 +164,13 @@ nmap <leader>gl :!open-in-gitlab.sh %<cr>
 
 " Autocomplete brackets
 " https://stackoverflow.com/questions/21316727/automatic-closing-brackets-for-vim
-inoremap " ""<left>
-inoremap ' ''<left>
-inoremap ( ()<left>
-inoremap (; ();<left><left>
-inoremap [ []<left>
-inoremap { {}<left>
-inoremap < <><left>
-inoremap {<CR> {<CR>}<ESC>O
-inoremap {;<CR> {<CR>};<ESC>O
+"inoremap ( ()<left>
+"inoremap (; ();<left><left>
+"inoremap [ []<left>
+"inoremap { {}<left>
+"inoremap < <><left>
+"inoremap {<CR> {<CR>}<ESC>O
+"inoremap {;<CR> {<CR>};<ESC>O
 
 " bold and italics
 inoremap <C-b> **<left>
