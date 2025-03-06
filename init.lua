@@ -11,7 +11,12 @@
 --   * https://github.com/rosetree/tildeslash/blob/master/.vimrc
 
 -- Basic Settings --
-vim.opt.compatible = false -- be improved, required
+-- https://github.com/nvim-tree/nvim-tree.lua?tab=readme-ov-file
+vim.g.loaded_netrw = 1
+vim.g.loaded_netrwPlugin = 1
+
+-- be improved, required
+vim.opt.compatible = false
 
 -- Plugin Management --
 -- Using packer.nvim instead of Vundle
@@ -57,7 +62,12 @@ require('packer').startup(function(use)
     requires = { {'nvim-lua/plenary.nvim'} }
   }
   use 'dyng/ctrlsf.vim'
-  use 'scrooloose/nerdtree'
+  use {
+  'nvim-tree/nvim-tree.lua',
+    requires = {
+      'nvim-tree/nvim-web-devicons', -- optional
+    },
+  }
   use {'iamcco/markdown-preview.nvim', run = 'cd app && yarn install'}
   use 'Luxed/ayu-vim'
   use 'tpope/vim-rails'
@@ -76,6 +86,11 @@ vim.cmd('filetype plugin indent on')
 if vim.fn.has('termguicolors') == 1 then
   vim.opt.termguicolors = true
 end
+
+-- Nvim Tree
+-- empty setup using defaults
+require("nvim-tree").setup()
+vim.api.nvim_set_keymap('n', '<C-b>', ':NvimTreeToggle<cr>', {noremap = true})
 
 -- This configuration is not working after the conversion to lua
 -- if vim.env.TERM:find('256color') and (vim.env.TERM:find('^screen') or vim.env.TERM:find('^tmux')) then
@@ -188,13 +203,6 @@ vim.api.nvim_set_keymap('i', '<C-A>', '<C-O>yiW<End>=<C-R>=<C-R>0<CR>', {noremap
 -- Macros --
 -- Make a markdown (link)[]
 vim.fn.setreg('k', 'bi[lxea](a')
-
--- NERDTree --
-vim.g.NERDTreeHijackNetrw = 0
-vim.g.NERDTreeShowHidden = 1
-
-vim.api.nvim_set_keymap('n', '<C-B>', ':NERDTreeToggle<cr>', {noremap = true})
-vim.api.nvim_set_keymap('n', '<leader>f', ':NERDTreeFind<cr>', {noremap = true})
 
 -- PHP --
 -- Execute PHP files
