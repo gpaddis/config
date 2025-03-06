@@ -12,6 +12,7 @@ brew 'openvpn'
 brew 'pnpm'
 brew 'redis'
 brew 'tmux'
+brew 'wget'
 brew 'zsh'
 
 # Cask appllications
