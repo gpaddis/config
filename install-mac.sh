@@ -7,7 +7,7 @@ commandNotFound brew && /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercon
 commandNotFound zsh && sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 commandNotFound fzf && brew install fzf && $(brew --prefix)/opt/fzf/install
 
-DOTFILES=$(cd $(dirname "${BASH_SOURCE[0]}") && pwd
+DOTFILES=$(cd $(dirname "${BASH_SOURCE[0]}") && pwd)
 
 ln -s "$DOTFILES/Brewfile" "$HOME/Brewfile"
 brew bundle
@@ -34,12 +34,7 @@ fileNotFound $HOME/.aliases && ln -s "$DOTFILES/.aliases" "$HOME/.aliases"
 grep -q '.aliases' $HOME/.zshrc || echo "source .aliases" >>$HOME/.zshrc
 
 # Configure neovim
-# fileNotFound $HOME/.vimrc && ln -s .vimrc $HOME/.vimrc
-# mkdir -p $HOME/.config/nvim/
-# fileNotFound $HOME/.config/nvim/init.vim && cat <<EOT >$HOME/.config/nvim/init.vim
-# set runtimepath^=~/.vim runtimepath+=~/.vim/after
-# let &packpath=&runtimepath
-# source ~/.vimrc
-# EOT
+mkdir -p $HOME/.config/nvim/
+ln -snf $DOTFILES/init.lua $HOME/.config/nvim/init.lua
 
 printGreen "Installation complete."
