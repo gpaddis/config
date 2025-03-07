@@ -10,6 +10,7 @@ commandNotFound fzf && brew install fzf && $(brew --prefix)/opt/fzf/install
 DOTFILES=$(cd $(dirname "${BASH_SOURCE[0]}") && pwd)
 
 ln -s "$DOTFILES/Brewfile" "$HOME/Brewfile"
+cd $HOME
 brew bundle
 
 fileNotFound $HOME/.ssh/id_ed25519 && {
