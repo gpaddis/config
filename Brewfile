@@ -13,11 +13,13 @@ brew 'pnpm'
 brew 'redis'
 brew 'tmux'
 brew 'wget'
+brew 'wireguard-tools'
 brew 'zsh'
 
 # Cask appllications
 cask 'brave-browser'
 cask 'claude'
+cask 'keepassxc'
 cask 'obsidian'
 cask 'rectangle'
 cask 'whatsapp'
