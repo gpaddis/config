@@ -25,6 +25,7 @@ cask 'claude'
 cask 'keepassxc'
 cask 'obsidian'
 cask 'rectangle'
+cask 'shifty'
 cask 'whatsapp'
 
 # Fonts
