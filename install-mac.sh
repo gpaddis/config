@@ -1,5 +1,7 @@
 #!/bin/bash
 
+set -e
+
 . bash_functions.sh
 
 # Install missing software with homebrew.
