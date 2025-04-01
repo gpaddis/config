@@ -5,9 +5,8 @@ set -e
 . bash_functions.sh
 
 # Install missing software with homebrew.
-commandNotFound brew && /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+commandNotFound brew && /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 commandNotFound zsh && sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
-commandNotFound fzf && brew install fzf && $(brew --prefix)/opt/fzf/install
 
 DOTFILES=$(cd $(dirname "${BASH_SOURCE[0]}") && pwd)
 
@@ -29,8 +28,8 @@ grep -q 'UseKeychain yes' $HOME/.ssh/config || {
   ssh-add --apple-use-keychain $HOME/.ssh/id_ed25519
 }
 
-# Install plugins
-#dirNotFound ~/.vim/bundle/Vundle.vim && git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
+# Configure Tmux
+ln -s $DOTFILES/.tmux.conf $HOME/.tmux.conf
 dirNotFound ~/.tmux/plugins/tpm && git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
 
 fileNotFound $HOME/.aliases && ln -s "$DOTFILES/.aliases" "$HOME/.aliases"
@@ -39,5 +38,12 @@ grep -q '.aliases' $HOME/.zshrc || echo "source .aliases" >>$HOME/.zshrc
 # Configure neovim
 mkdir -p $HOME/.config/nvim/
 ln -snf $DOTFILES/init.lua $HOME/.config/nvim/init.lua
+
+# Configure git
+touch ~/.gitignore
+git config --global core.excludesFile '~/.gitignore'
+git config --global user.name 'Gianpiero Addis'
+git config --global user.email $EMAIL_ADDRESS
+git config --global merge.conflictstyle diff3
 
 printGreen "Installation complete."
