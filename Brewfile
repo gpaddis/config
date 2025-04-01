@@ -1,4 +1,5 @@
 # Standard packages
+brew 'awscli'
 brew 'coreutils'
 brew 'fd'
 brew 'fzf'
@@ -14,6 +15,7 @@ brew 'openvpn'
 brew 'pnpm'
 brew 'rbenv'
 brew 'redis'
+brew 'session-manager-plugin' # useful for awscli
 brew 'tmux'
 brew 'wget'
 brew 'wireguard-tools'
