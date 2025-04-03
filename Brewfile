@@ -1,4 +1,5 @@
 # Standard packages
+brew 'asdf'
 brew 'awscli'
 brew 'coreutils'
 brew 'fd'
@@ -15,7 +16,6 @@ brew 'openvpn'
 brew 'pnpm'
 brew 'rbenv'
 brew 'redis'
-brew 'session-manager-plugin' # useful for awscli
 brew 'tmux'
 brew 'wget'
 brew 'wireguard-tools'
@@ -24,11 +24,13 @@ brew 'zsh'
 # Cask appllications
 cask 'alfred'
 cask 'brave-browser'
+cask 'bruno'
 cask 'claude'
 cask 'keepassxc'
 cask 'obsidian'
 cask 'rectangle'
 cask 'shifty'
+cask 'session-manager-plugin' # useful for awscli
 cask 'signal'
 cask 'slack'
 cask 'spotify'
