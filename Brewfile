@@ -1,6 +1,10 @@
-# Standard packages
+# Tap
+tap 'ivandokov/homebrew-contrib' # https://github.com/ivandokov/phockup
+
+# Packages
 brew 'asdf'
 brew 'awscli'
+brew 'bat'
 brew 'coreutils'
 brew 'fd'
 brew 'fzf'
@@ -13,15 +17,17 @@ brew 'k9s'
 brew 'ncdu'
 brew 'nvim'
 brew 'openvpn'
+brew 'phockup' # https://github.com/ivandokov/phockup
 brew 'pnpm'
 brew 'rbenv'
 brew 'redis'
 brew 'tmux'
 brew 'wget'
 brew 'wireguard-tools'
+brew 'yt-dlp'
 brew 'zsh'
 
-# Cask appllications
+# Cask applications
 cask 'alfred'
 cask 'brave-browser'
 cask 'bruno'
