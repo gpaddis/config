@@ -34,6 +34,7 @@ cask 'bruno'
 cask 'claude'
 cask 'keepassxc'
 cask 'obsidian'
+cask 'orbstack'
 cask 'rectangle'
 cask 'shifty'
 cask 'session-manager-plugin' # useful for awscli
