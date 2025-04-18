@@ -14,6 +14,7 @@ brew 'httpie'
 brew 'jq'
 brew 'kubectl'
 brew 'k9s'
+brew 'lux' # video downloader https://github.com/iawia002/lux
 brew 'ncdu'
 brew 'nvim'
 brew 'openvpn'
@@ -34,7 +35,7 @@ cask 'claude'
 cask 'keepassxc'
 cask 'obsidian'
 cask 'orbstack'
-cask 'radiola'
+cask 'radiola' # A cool, minimal radio app for mac https://github.com/SokoloffA/radiola
 cask 'rectangle'
 cask 'shifty'
 cask 'session-manager-plugin' # useful for awscli
@@ -44,6 +45,7 @@ cask 'spotify'
 cask 'stats'
 cask 'telegram'
 cask 'visual-studio-code'
+cask 'vlc'
 cask 'whatsapp'
 
 # Fonts
