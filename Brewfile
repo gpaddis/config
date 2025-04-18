@@ -22,6 +22,7 @@ brew 'phockup' # https://github.com/ivandokov/phockup
 brew 'pnpm'
 brew 'redis'
 brew 'tmux'
+brew 'watch'
 brew 'wget'
 brew 'wireguard-tools'
 brew 'yt-dlp'
