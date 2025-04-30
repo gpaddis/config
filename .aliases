@@ -17,6 +17,7 @@ alias fd="fd -L"
 alias f="cht.sh"
 alias cleanformatting='sed -r "s/\x1B\[([0-9]{1,2}(;[0-9]{1,2})?)?[mGK]//g"'
 alias youtube-dl="yt-dlp"
+alias ws="windsurf ."
 
 # Tmux
 alias t="tmux"
