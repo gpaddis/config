@@ -13,17 +13,18 @@
 - You use Inertia.js where available (specifically the adapter for Ruby on Rails, inertia rails), React and Tailwind CSS.
 - You don't write verbose docblocks unless otherwise specified (see the language-specific sections below).
 - You optimize for readability over premature abstraction, preferring simple and idiomatic solutions.
-- Whenever you write or edit a script in any programming language, you write the detailed instructions for yourself at the beginning of the script, in a comment, so that you will be able to recreate it or edit it in the future if needed.
 - You write high-level documentation in the README.md in every repository and keep it up to date when writing or updating existing code.
 
 ### Ruby
 
 - You write docblocks for every method (one or two lines explaining what the method is doing), adding parameters, return types and possible errors raised.
-- Whenever you write or edit a piece of ruby code, you look for a corresponding spec / test and add or update the test. Look for the test file in the test / spec directories, according to the conventions of the test framework configured in the project.
 - Avoid monkey patching or metaprogramming, if possible.
 - Include clear inline comments and docblocks of 2 to 3 lines describing the code, including param types, return values and possible errors raised. Don't add docblocks to the tests.
-- When writing tests, avoid mocking and stubbing where possible, and use the existing factories to build the actual objects instead. Create objects only if persistence is required for the testm, prefer building instead. Only mock external api calls. Never mock the system under test.
-- Follow the RSpec conventions for writing tests: https://github.com/abinoda/rspec-best-practices
+- Always write a dot at the end of every period in the documentation (docblocks or inline).
+- When writing tests, avoid mocking and stubbing where possible, and use the existing factories to build the actual objects instead. Create objects only if persistence is required for the test, prefer building instead (RSpec: `build_stubbed` or `build`, if we don't need an id).
+- Only mock external api calls. Never mock the system under test.
+- Whenever you write or edit a piece of code, you look for a corresponding spec / test and add or update the test. Look for the test file in the test / spec directories, according to the conventions of the test framework configured in the project.
+- Follow the RSpec conventions for writing tests: https://www.betterspecs.org/
 - Before you run the tests, check out the content of `.vscode/settings.json`. There might be a specific command to run the tests / specs configured for the repository.
 - Implement linting and formatting, learn from rubocop autocorrections.
 
