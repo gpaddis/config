@@ -51,6 +51,7 @@ cask 'telegram'
 cask 'visual-studio-code'
 cask 'vlc'
 cask 'whatsapp'
+cask 'zoom'
 
 # Fonts
 cask 'font-fira-mono'
