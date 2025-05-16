@@ -21,6 +21,7 @@ brew 'openvpn'
 brew 'phockup' # https://github.com/ivandokov/phockup
 brew 'pnpm'
 brew 'redis'
+brew 'slides'
 brew 'tmux'
 brew 'watch'
 brew 'wget'
