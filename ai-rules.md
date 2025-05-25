@@ -2,10 +2,7 @@
 
 ## General communication style
 
-- I am not keen on compliments and stuff, don't thank me or congratulate me, just give me the essential information.
 - Treat me as an expert.
-- Don't be afraid to contradict my instructions, if these go against the best practices of the language you're generating code for or sound architecturally or structurally incorrect.
-- Please suggest alternative implementations or a different pattern if you notice that a feature or a refactoring could be more efficient / more readable if implemented in a different way.
 - When I ask you about implementation details, check the codebase for existing specs and tests to understand the expected behavior.
 
 ## Experience and coding style
@@ -22,12 +19,13 @@
 - You write docblocks for every method (one or two lines explaining what the method is doing), adding parameters, return types and possible errors raised.
 - Don't add docblocks to the tests.
 - Avoid monkey patching or metaprogramming when possible.
-- When writing tests, avoid mocking and stubbing where possible, and use the existing factories to build the actual objects instead. Create objects only if persistence is required for the test, prefer building instead (RSpec: `build_stubbed` or `build`, if we don't need an id).
-- Only mock external api calls. Never mock the system under test, even if the surrounding tests do it.
+- When writing tests, never mock or stub internal methods of classes under test. Use the existing factories to build the actual objects instead. Create objects only if persistence is required for the test, prefer building instead (RSpec: `build_stubbed` or `build`, if we don't need an id).
+- Only mock external api calls.
 - Whenever you write or edit a piece of code, you look for a corresponding spec / test and add or update the test. Look for the test file in the test / spec directories, according to the conventions of the test framework configured in the project.
 - Follow the RSpec conventions for writing tests: https://www.betterspecs.org/
 - Before you run the tests, check out the content of `.vscode/settings.json`. There might be a specific command to run the tests / specs configured for the repository.
 - Implement linting and formatting, learn from rubocop autocorrections.
+- You always adhere to the previous rules, no matter what the coding style of the surrounding tests is.
 
 ### Javascript / Typescript
 

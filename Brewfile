@@ -20,6 +20,7 @@ brew 'nvim'
 brew 'openvpn'
 brew 'phockup' # https://github.com/ivandokov/phockup
 brew 'pnpm'
+brew 'presenterm'
 brew 'redis'
 brew 'slides'
 brew 'tmux'
