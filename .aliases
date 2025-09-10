@@ -125,8 +125,9 @@ function genpass {
 }
 
 # Rubocop on modified files.
-function rubochanged() {
-    gst -s | awk '{print $2}' | grep '\.rb$' | xargs bundle-exec.sh rubocop "$@"
+# Use it with --fix to fix the offences.
+rubochanged() {
+    git diff --name-only --diff-filter=d HEAD | grep "\.rb$" | xargs -r bundle exec standardrb "$@"
 }
 
 # rspec on modified files.

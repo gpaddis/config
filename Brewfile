@@ -19,7 +19,7 @@ brew 'k9s'
 brew 'lux' # video downloader https://github.com/iawia002/lux
 brew 'ncdu'
 brew 'nvim'
-brew 'ollama'
+brew 'openjdk'
 brew 'openvpn'
 brew 'phockup' # https://github.com/ivandokov/phockup
 brew 'pnpm'
