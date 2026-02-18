@@ -263,6 +263,16 @@ vim.g.ale_fixers = {
 -- Set this variable to 1 to fix files when you save them.
 vim.g.ale_fix_on_save = 1
 
+-- Disable ALE for markdown files
+vim.g.ale_linters_ignore = {
+  markdown = {'all'},
+  vimwiki = {'all'},
+}
+vim.g.ale_pattern_options = {
+  ['\\.md$'] = {ale_enabled = 0},
+  ['\\.wiki$'] = {ale_enabled = 0},
+}
+
 -- Split Management --
 -- Open splits
 vim.api.nvim_set_keymap('n', 'vs', ':vsplit<cr>', {noremap = true})
